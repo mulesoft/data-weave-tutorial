@@ -10,7 +10,7 @@ We use mapObject when we want to change the keys and/or values on an Object to b
 
 ---
 ### Input
-```
+```json
 {
   "firstName": "Avery",
   "lastName": "Chance",
@@ -20,7 +20,7 @@ We use mapObject when we want to change the keys and/or values on an Object to b
 ```
 
 ### DW Script
-```
+```dw
 %dw 2.0
 output application/json
 ---
@@ -30,7 +30,7 @@ payload mapObject (value, key, index) -> {
 ```
 
 ### Output
-```
+```json
 {
   "FIRSTNAME": "Avery",
   "LASTNAME": "Chance",
@@ -45,7 +45,7 @@ payload mapObject (value, key, index) -> {
 mapObject is also useful when you need to be more precise and what parts of the Object you transform. For example, you might only want to modify the value for a certain key. You can use if/else to catch the key:value pair you want to modify, and pass through all the other key:value pairs without modifying them:
 
 ### Input
-```
+```json
 {
   "firstName": "Avery",
   "lastName": "Chance",
@@ -55,7 +55,7 @@ mapObject is also useful when you need to be more precise and what parts of the 
 ```
 
 ### DW Script
-```
+```dw
 payload mapObject (value, key, index) ->
   if (key ~= "age") 
     {
@@ -68,7 +68,7 @@ payload mapObject (value, key, index) ->
 ```
 
 ### Output
-```
+```json
 {
   "firstName": "Avery",
   "lastName": "Chance",
