@@ -10,8 +10,8 @@ Most of this is expected, filterObject takes in an Object and a lambda that retu
 
 Filtering by value works the same as with Arrays:
 
-
-### Payload
+---
+### Input
 ```json
 {
   "name": "Jerry Schumann",
@@ -21,16 +21,83 @@ Filtering by value works the same as with Arrays:
 ```
 
 ### DW Script
-```
+```dw
 %dw 2.0
 output application/json
 ---
 payload filterObject (v,k,idx) -> v contains "Jerry"
 ```
 
-### Expected Output
+### Output
 ```json
 {
   "name": "Jerry Schumann"
 }
 ```
+
+> Filtering by index might seem odd for Objects because the order of key:value pairs is not normally significant, but in DataWeave it is. When indexing Objects for these functions, DataWeave starts at the top of the Object and works its way to the bottom:
+---
+### Input
+```json
+{
+  "name": "Jerry Schumann",
+  "age": 34,
+  "address": "123 Main Street"
+}
+```
+
+### DW Script
+```dw
+%dw 2.0
+output application/json
+---
+payload filterObject (v,k,idx) -> idx == 2
+```
+
+### Output
+```json
+{
+  "address": "123 Main Street"
+}
+```
+---
+
+Filtering by key deserves some attention, however:
+
+---
+### Input
+```json
+{
+  "name": "Jerry Schumann",
+  "age": 34,
+  "address": "123 Main Street"
+}
+```
+
+### DW Script
+```dw
+%dw 2.0
+output application/json
+---
+payload filterObject (v,k,idx) -> k == "age"
+```
+
+### Output
+```json
+{}
+```
+---
+
+What happened?
+
+### (Ch) Why wasn’t the output {"age": 34}? Hint: are there differences between the Key, k, and the String “age” in k == "age"?
+
+All Object keys in DataWeave are of type Key, regardless of how the Object keys are created. The == operator tests if two values are equal, and part of that means checking that two values are the same type. This is why k == "age" returned false for every key:value pair in the input Object, Key == String is always false. How do you deal with this? There are three ways, you can:
+
+cast the Key to a String with k as String == "age",
+cast the String to a Key with k == "age" as Key, or,
+use the “similar to” operator, ~= instead of the “equal to” operator.
+
+### (Ch) Try the different options above to make sure you can get the {"age": 34} output.
+
+The ~= operator and filterObject function usually go together. If you’re using filterObject to filter an Object based on a key, make sure you keep the ~= operator in mind!
