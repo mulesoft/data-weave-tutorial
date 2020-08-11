@@ -1,6 +1,6 @@
 # The mapObject function
 
-mapObject has the same relation to map that filterObject has to filter. In this case, mapObject maps an Object to an new Object instead of an Array to a new Array. Here’s the type signature for mapObject:
+mapObject has the same relation to map that filterObject has to filter. In this case, mapObject maps an Object to an new Object instead of an Array to a new Array. Here's the type signature for mapObject:
 
 mapObject(Object<K,V>, (V,K,Number) -> Object): Object
 
