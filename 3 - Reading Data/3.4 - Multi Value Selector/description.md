@@ -1,9 +1,9 @@
 # Multi Value Selector
 
-The multi-value selector returns an Array containing any value that matches the key. The values returned are dependent on the key that’s passed in. The multi-value selector works on both Arrays and Objects, but in different ways. Let’s check out Arrays first:
+The multi-value selector (`.*`) returns an Array containing any value that matches the key. The values returned are dependent on the key that’s passed in. The multi-value selector works on both Arrays and Objects, but in different ways. Let’s check out Arrays first:
 
 ---
-##Input:
+## Input:
 ```json
 [
   {
@@ -23,14 +23,14 @@ The multi-value selector returns an Array containing any value that matches the 
   }
 ]
 ```
-##DW Script:
+## DW Script:
 ```dw
 %dw 2.0
 output application/json
 —--
 payload.*number
 ```
-##Output:
+## Output:
 ```json
 [1, 2, 3, 4, 5, 6]
 ```
@@ -41,7 +41,7 @@ In this case, the multi-value selector will go through each item in the Array an
 Let’s see how the multi-value selector works on Objects:
 
 ---
-##Input:
+## Input:
 ```json
 {
   "number": 1,
@@ -50,14 +50,14 @@ Let’s see how the multi-value selector works on Objects:
   "string": 4
 }
 ```
-##DW Script:
+## DW Script:
 ```dw
 %dw 2.0
 output application/json
 —--
 payload.*number
 ```
-##Output:
+## Output:
 ```json
 [1, 2, 3]
 ```
@@ -66,7 +66,7 @@ payload.*number
 The multi-value selector works on Objects by getting the value for every key that matches. This works great when you’re dealing with data with repeating keys. This might seem a little weird for JSON, but consider a similar example in XML, you will see why the multi-value selector is a very important selector to know. Use it to get an Array of all `number` values in this input:
 
 ---
-##Input:
+## Input:
 ```xml
 <data>
   <number>1</number>

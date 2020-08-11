@@ -1,20 +1,20 @@
 # Index Selector
 
-Now that we understand how to traverse Objects with the single-value selector, let’s see how to traverse Arrays with the index selector (`[]`). Use the index selector to get to a value in an Array based on its position from the beginning of the Array:
+Now that we understand how to traverse Objects with the single-value selector, let’s see how to traverse Arrays with the index selector (`[n]`). Use the index selector to get to a value in an Array based on its position from the beginning of the Array:
 
 ---
-##Input:
+## Input:
 ```json
 ["prod", "qa", "dev"]
 ```
-##DW Script:
+## DW Script:
 ```dw
 %dw 2.0
 output application/json
 —--
 payload[1]
 ```
-##Output:
+## Output:
 ```json
 "qa"
 ```
@@ -29,7 +29,7 @@ There’s another important feature that should be noted. If you use positive nu
 Given the following input, get to `"qa"` using only negative indexes.
 
 ---
-##Input:
+## Input:
 ```json
 ["prod", ["qa", "dev"]]
 ```
