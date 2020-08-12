@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<customer>
+  <name>Max the Mule</name>
+  <locations>
+    <name>Max’s house</name>
+    <address>1234 Mule Street</address>
+  </locations>
+  <locations>
+    <name>Max's cabin</name>
+    <address>345 Lakeside Road</address>
+  </locations>
+</customer>
