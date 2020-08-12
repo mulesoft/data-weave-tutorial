@@ -1,6 +1,7 @@
 
 # Flow Control
 
+<<<<<<< Updated upstream
 Flow control is used when you want to execute certain parts of your code in some situations, while not executing others. In other words, it’s a way to add logic to your scripts.
 
 A common use case for variables is to store the result of some kind of boolean operation. Think of a boolean operation as an expression that returns some value if some criteria is met, and returns another value if the criteria is not met. The simplest boolean operations use equality, relational, and logical operators. You might be familiar with these from other languages:
@@ -154,3 +155,6 @@ payload.action match {
 ```
 
 
+=======
+Flow control is used when you want to execute certain parts of your code in some situations, while not executing others. In other words, it’s a way to add logic to your scripts.
+>>>>>>> Stashed changes

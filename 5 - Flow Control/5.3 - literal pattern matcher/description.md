@@ -1,0 +1,49 @@
+# Pattern Match with literal values
+
+Pattern matching is another method of flow control, but it does quite a bit more under the hood than the if/else expression does, and the syntax is a little more complicated. Like the if/else expression, pattern matching also returns a single value. Here’s a simplification of how pattern matching expressions are formatted:
+
+```
+<input_expression> match {
+  case <condition> -> <execute_if_condition_pass>
+  case <condition> -> <execute_if_condition_pass>
+  else -> <execute_if_no_condition_pass>
+}
+```
+
+The easiest way to understand basic pattern matching it to show an example:
+
+
+### Input:
+
+```json
+{
+  "action": "buy"
+}
+```
+
+### DW Script:
+
+```dw
+%dw 2.0
+output application/json
+—--
+payload.action match {
+  case "buy"  -> “Buy at market price"
+  case "sell" -> "Sell at market price"
+  case "hold" -> “Hold asset"
+  else   -> "Invalid input"
+}
+```
+
+### Output:
+
+```json
+"Buy at market price"
+```
+
+---
+
+## Excercise 
+
+Given the value of the field `status` of the `payload` that can be "Active" or "Disabled" return 1 for "Active" and 0 for "Disabled"
+
