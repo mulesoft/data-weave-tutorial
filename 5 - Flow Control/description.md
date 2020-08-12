@@ -29,7 +29,7 @@ if (<criteria_expression>) <return_if_true> else <return_if_false>
 > There are cases in DW where parentheses are optional, but it’s important to note the criteria must be surrounded by parentheses in if/else expressions. Here’s a concrete example:
 
 
-## Input:
+### Input:
 
 ```json
 {
@@ -37,7 +37,7 @@ if (<criteria_expression>) <return_if_true> else <return_if_false>
 }
 ```
 
-## DW Script:
+### DW Script:
 
 ```dw
 %dw 2.0
@@ -51,7 +51,7 @@ var action = if (payload.price < 100) "buy" else "hold"
 }
 ```
 
-## Output:
+### Output:
 
 ```
 {
@@ -76,14 +76,14 @@ else
 You can have as many of these if/else chains as necessary. Imagine you had a third option in addition to “buy” and “hold”, “sell”. You could chain if/else expressions together to account for this additional criteria:
 
 
-## Input:
+### Input:
 ```json
 {
   "price": 100.00
 }
 ```
 
-## DW Script:
+### DW Script:
 
 ```
 %dw 2.0
@@ -102,7 +102,7 @@ var action = if (payload.price < 99)
 }
 ```
 
-## Output:
+### Output:
 ```
 {
   "price": 100.00,
@@ -111,7 +111,7 @@ var action = if (payload.price < 99)
 ```
 
 
-## Pattern Matching
+### Pattern Matching
 
 Pattern matching is another method of flow control, but it does quite a bit more under the hood than the if/else expression does, and the syntax is a little more complicated. Like the if/else expression, pattern matching also returns a single value. Here’s a simplification of how pattern matching expressions are formatted:
 
@@ -126,7 +126,7 @@ Pattern matching is another method of flow control, but it does quite a bit more
 The easiest way to understand basic pattern matching it to show an example:
 
 
-# Input:
+### Input:
 
 ```json
 {
@@ -134,7 +134,7 @@ The easiest way to understand basic pattern matching it to show an example:
 }
 ```
 
-# DW Script:
+### DW Script:
 
 ```dw
 %dw 2.0
@@ -148,7 +148,7 @@ payload.action match {
 }
 ```
 
-# Output:
+### Output:
 ```json
 "Buy at market price"
 ```

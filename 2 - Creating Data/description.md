@@ -13,18 +13,18 @@ TODO: Add in type definitions and briefly explain what they mean. This should pr
 DataWeave doesn’t need input data to generate output. For example, the following script takes no input, it just outputs the String “Hello”:
 
 ---
-##Input:
+### Input:
 ```
 ```
 
-##DW Script:
+### DW Script:
 ```dw
 %dw 2.0
 output application/json
 —--
 "Hello"
 ```
-##Output:
+### Output:
 ```
 "Hello"
 ```
@@ -33,18 +33,18 @@ output application/json
 DataWeave also supports numbers with the Number type. The Number type supports both integer and floating-point numbers:
 
 ---
-##Input:
+### Input:
 ```
 ```
 
-##DW Script:
+### DW Script:
 ```dw
 %dw 2.0
 output application/json
 —--
 1
 ```
-##Output:
+### Output:
 ```
 1
 ```
@@ -53,11 +53,11 @@ output application/json
 You can check the type of a value by using typeOf:
 
 ---
-##Input:
+### Input:
 ```
 ```
 
-##DW Script:
+### DW Script:
 ```dw
 %dw 2.0
 output application/json
@@ -65,7 +65,7 @@ output application/json
 typeOf(1)
 ```
 
-##Output:
+### Output:
 ```
 “Number”
 ```
@@ -76,11 +76,11 @@ typeOf(1)
 The last simple type we’ll cover in this tutorial is the Boolean type. The Boolean type only has two value values: true and false.
 
 ---
-##Input:
+### Input:
 ```
 ```
 
-##DW Script:
+### DW Script:
 ```dw
 %dw 2.0
 output application/json
@@ -90,7 +90,7 @@ output application/json
   “false”: false
 }
 ```
-##Output:
+### Output:
 ```
 {
   “true”: true,
@@ -104,18 +104,18 @@ Booleans are valuable when it comes to conditional logic (i.e., “if something 
 In addition to Strings, Numbers and Booleans, DataWeave also supports collections with Arrays, and Objects. Arrays are an ordered series of values where the values can be of any type:
 
 ---
-##Input:
+### Input:
 ```
 ```
 
-##DW Script:
+### DW Script:
 ```dw
 %dw 2.0
 output application/json
 —--
 [“1”, 2, “3”, 4, “five”]
 ```
-##Output:
+### Output:
 ```
 [“1”, 2, “3”, 4, “five”]
 ```
@@ -124,11 +124,11 @@ output application/json
 Objects are a series of key-value mappings, where the value can be of any type:
 
 ---
-##Input:
+### Input:
 ```
 ```
 
-##DW Script:
+### DW Script:
 ```dw
 %dw 2.0
 output application/json
@@ -138,7 +138,7 @@ output application/json
   two: “2”
 }
 ```
-##Output:
+### Output:
 ```
 {
   “one”: 1,
@@ -150,10 +150,10 @@ output application/json
 DataWeave allows repeated keys on Objects as well:
 
 ---
-##Input:
+### Input:
 ```
 ```
-##DW Script:
+### DW Script:
 ```dw
 %dw 2.0
 output application/json
@@ -163,7 +163,7 @@ output application/json
   number: 2
 }
 ```
-##Output:
+### Output:
 ```
 {
   “number”: 1,
@@ -175,10 +175,10 @@ output application/json
 This may seem like a bug, but the support for this makes sense when we consider how to create repeated keys for XML:
 
 ---
-##Input:
+### Input:
 ```
 ```
-##DW Script:
+### DW Script:
 ```dw
 %dw 2.0
 output application/xml
@@ -190,7 +190,7 @@ output application/xml
   }
 }
 ```
-##Output:
+### Output:
 ```
 <?xml version='1.0' encoding='UTF-8'?>
 <numbers>

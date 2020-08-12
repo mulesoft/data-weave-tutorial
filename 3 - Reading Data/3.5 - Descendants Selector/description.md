@@ -3,7 +3,7 @@
 The descendants selector (`..`) is the perfect tool to use when you need the values for a certain key no matter where they appear in a piece of data. Here’s an example:
 
 ---
-## Input:
+### Input:
 ```json
 {
   "target": {"hello": "world"},
@@ -17,14 +17,14 @@ The descendants selector (`..`) is the perfect tool to use when you need the val
   ]
 }
 ```
-## DW Script:
+### DW Script:
 ```dw
 %dw 2.0
 output application/json
 —--
 payload..target
 ```
-## Output:
+### Output:
 ```json
 [{"hello": "world"}, "foo", "bar"]
 ```
@@ -33,7 +33,7 @@ payload..target
 Use what you've just learn to obtain an Array containing all of the values associated with any `name` key in the following input:
 
 ---
-## Input:
+### Input:
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
 <customer>
