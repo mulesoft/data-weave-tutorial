@@ -47,3 +47,5 @@ filter(Array<T>, ((T, Number) -> Boolean)): Array<T>
 is shorthand for, "filter is a function that takes 2 input parameters. The first parameter is an Array containing items of type T. The second parameter is a function. The function takes T as the type of its first parameter, and Number as the type of its second. It returns a Boolean. The filter function returns an Array containing items of type T."
 
 Notice that this definition does not provide any contextual information on what the types represent. It doesn't tell us anything about why the T in Array<T>, and the T that is the first input to the function are the same (it only tells us that they must be the same). It doesn't tell us Number represents the index of the item the function is currently processing. It doesn’t tell us the Boolean value is used to determine if an item is removed from the input Array or not. 
+
+Given the input below which will be in the variable `payload`, 
