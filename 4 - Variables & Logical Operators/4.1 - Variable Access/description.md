@@ -1,5 +1,4 @@
-
-# Variable Access
+# 4.1 - Variable Access
 
 Like other languages, DataWeave has variables so that you can store values to use later on in your script. Think of variables as a container for your data. The name you give to the variable is just like putting a label on the outside of the container so you can easily find it later. Variables are useful for giving values names, and storing a calculation that would otherwise need to be repeated. To set a variable, use the following syntax:
 
@@ -30,9 +29,6 @@ This script will output
 
 Variables are almost always declared in the header of the script, where you set other declarations. 
 
-
-
 ## Excercise
 
 Given the a variable named user declared as `var user = {name: "Data Weave"}` try to access the field `name` inside.
-

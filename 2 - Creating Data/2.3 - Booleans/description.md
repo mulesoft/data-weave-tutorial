@@ -1,9 +1,9 @@
-# Booleans
+# 2.3 - Booleans
 
 This is the last simple type we’ll cover in this tutorial. The `Boolean` type only has two values: true and false.
 
 ---
-## DW Script:
+#### DW Script:
 ```dw
 %dw 2.0
 output application/json
@@ -13,7 +13,7 @@ output application/json
   "no": false
 }
 ```
-## Output:
+#### Output:
 ```
 {
   "yes": true,

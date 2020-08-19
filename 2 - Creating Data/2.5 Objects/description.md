@@ -1,9 +1,9 @@
-# Objects
+# 2.5 - Objects
 
 Objects are a series of key-value mappings, where the value can be of any type:
 
 ---
-## DW Script:
+#### DW Script:
 ```dw
 %dw 2.0
 output application/json
@@ -13,7 +13,7 @@ output application/json
   two: "2"
 }
 ```
-## Output:
+#### Output:
 ```json
 {
   "one": [1],

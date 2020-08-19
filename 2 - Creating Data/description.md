@@ -1,4 +1,4 @@
-# Creating Data
+# 2 - Creating Data
 
 In this tutorial we will go over how to create:
 * Numbers
@@ -21,7 +21,7 @@ As you'd expect, the last two are actually composite types, their contents also 
 You can check the type of a value by using `typeOf`:
 
 ---
-## DW Script:
+#### DW Script:
 ```dw
 %dw 2.0
 output application/json
@@ -29,7 +29,7 @@ output application/json
 typeOf({})
 ```
 
-## Output:
+#### Output:
 ```
 “Object”
 ```

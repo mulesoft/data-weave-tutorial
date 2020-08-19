@@ -1,16 +1,16 @@
-# Numbers
+# 2.2 - Numbers
 
 DataWeave also supports numbers with the `Number` type, covering both integer and floating-point numbers.
 
 ---
-## DW Script:
+#### DW Script:
 ```dw
 %dw 2.0
 output application/json
 —--
 1
 ```
-## Output:
+#### Output:
 ```
 1
 ```

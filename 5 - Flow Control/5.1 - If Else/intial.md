@@ -1,11 +1,11 @@
 %dw 2.0
+output application/json
 
 var user = {name: "Peter", age: 19}
-output application/json
 ---
 if()
  "Toddler"
 else if()
- "Teenage"    
+ "Teenager"    
 else
- "Sr" 
+ "Sr"

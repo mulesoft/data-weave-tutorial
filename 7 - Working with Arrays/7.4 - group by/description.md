@@ -1,21 +1,21 @@
-# The groupBy Function
+# 7.4 - The groupBy Function
 
-The groupBy function is useful for grouping together items in an Array based on some value that is generated from each item in the Array. Here’s the function signature:
+The `groupBy` function is useful for grouping together items in an Array based on some value that is generated from each item in the Array. Here’s the function signature:
 ```
 groupBy(Array<T>, ((T, Number) -> R)): Object<(R), Array<T>>
 ```
-groupBy is different from the other functions we’ve covered in this tutorial because groupBy does not return an Array, it returns an Object. When we define Object types, we can use two type parameters:
+`groupBy` is different from the other functions we’ve covered in this tutorial because `groupBy` does not return an Array, it returns an Object. When we define Object types, we can use two type parameters:
 ```
 Object<(R), Array<T>>
 ```
-The first type parameter is the type of the keys, and the second type parameter is the type of the values. Applying this to groupBy, we can see it returns an Object whose keys are the type of the values returned from the lamda, and the values are the type of the input Array.
+The first type parameter is the type of the keys, and the second type parameter is the type of the values. Applying this to `groupBy`, we can see it returns an Object whose keys are the type of the values returned from the lambda, and the values are the type of the input Array.
 
-Note: This isn’t exactly true. No matter what type is used to create Object keys, they are always coerced to type Key. Even if the lambda in groupBy returned a Number, the keys of the output Object would ultimately be of type Key.
+> This isn’t exactly true. No matter what type is used to create Object keys, they are always coerced to type Key. Even if the lambda in `groupBy` returned a Number, the keys of the output Object would ultimately be of type Key.
 
-The lambda passed to groupBy takes in an item from the input Array, and the index of that item. It returns a value which is used to determine the group to which the item belongs. Here’s an example that groups calendar events based on day of the week:
+The lambda passed to `groupBy` takes in an item from the input Array, and the index of that item. It returns a value which is used to determine the group to which the item belongs. Here’s an example that groups calendar events based on day of the week:
 
 ---
-### Input
+#### Input
 ```
 [
   {
@@ -45,16 +45,14 @@ The lambda passed to groupBy takes in an item from the input Array, and the inde
   }
 ]
 ```
-
-### Dw Script
+#### DW Script
 ```
 %dw 2.0
 output application/json
 ---
 payload groupBy (event, idx) -> event.dayOfWeek
 ```
-
-### Output
+#### Output
 ```
 {
   "wed": [
@@ -92,24 +90,24 @@ payload groupBy (event, idx) -> event.dayOfWeek
 ```
 ---
 
-(Ch) Modify the script above to use the "datetime" to determine the day of week instead of the "dayOfWeek" value. Hint: you will need to cast the String to a LocalDateTime and use date decomposition to accomplish this.
+- Modify the script above to use the "datetime" to determine the day of week instead of the "dayOfWeek" value. Hint: you will need to cast the String to a LocalDateTime and use date decomposition to accomplish this.
 
-groupBy can also be used to split up Arrays based on some kind of validation criteria, as well. For example, you could split up odds and evens in an inbound Array:
+`groupBy` can also be used to split up Arrays based on some kind of validation criteria, as well. For example, you could split up odds and evens in an inbound Array:
 
 ---
-### Input
-
+#### Input
+```json
 [1,2,3,4,5,6,7,8,9,10]
-
-### Dw Script
-
+```
+#### DW Script
+```dw
 %dw 2.0
 output application/json
 ---
 payload groupBy (n, idx) -> isEven(n)
-
-### Output
-
+```
+#### Output
+```
 {
   "false": [
     1,3,5,7,9
@@ -118,6 +116,7 @@ payload groupBy (n, idx) -> isEven(n)
     2,4,6,8,10
   ]
 }
+```
 ---
 
-(Ch) How can you determine the number of keys the output Object from groupBy should contain?
+- How can you determine the number of keys the output Object from groupBy should contain?

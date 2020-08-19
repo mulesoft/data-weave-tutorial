@@ -1,21 +1,21 @@
-# Range Selector
+# 3.3 - Range Selector
 
 If you need multiple sequential values from an Array, DataWeave allows you to select a range of values with the range selector (`[n to m]`). Instead of returning a single value like the index selector does, it will return an Array of values:
 
 ---
-### Input:
+#### Input:
 ```json
 ["prod", "qa", "dev"]
 ```
 
-### DW Script:
+#### DW Script:
 ```dw
 %dw 2.0
 output application/json
 —--
 payload[0 to 1]
 ```
-### Output:
+#### Output:
 ```json
 ["prod", "qa"]
 ```

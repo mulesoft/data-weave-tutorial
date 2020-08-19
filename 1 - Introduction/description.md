@@ -1,4 +1,4 @@
-# Intro to DataWeave
+# 1 - Intro to DataWeave
 
 Welcome! And thanks for joining us on the path to learn DataWeave.
 

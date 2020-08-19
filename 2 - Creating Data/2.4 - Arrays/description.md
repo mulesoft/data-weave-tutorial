@@ -1,16 +1,16 @@
-# Arrays
+# 2.4 - Arrays
 
 Arrays are an ordered series of values where the values can be of any type:
 
 ---
-## DW Script:
+#### DW Script:
 ```dw
 %dw 2.0
 output application/json
 ---
 ["1", 2, "3", 4, "five"]
 ```
-## Output:
+#### Output:
 ```json
 ["1", 2, "3", 4, "five"]
 ```

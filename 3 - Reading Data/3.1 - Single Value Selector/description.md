@@ -1,23 +1,23 @@
-# Single Value Selector
+# 3.1 - Single Value Selector
 
 The single-value selector (`.`) allows you to lookup Object values by their key. Here’s an example:
 
 ---
-### Input:
+#### Input:
 ```json
 {
   "name": "Ana",
   "age": 29
 }
 ```
-### DW Script:
+#### DW Script:
 ```dw
 %dw 2.0
 output application/json
 —--
 payload.age
 ```
-### Output:
+#### Output:
 ```json
 29
 ```
@@ -26,14 +26,14 @@ payload.age
 You can also use the single-value selector with square brackets instead of a period. This allows you to do useful things like use a key that references a value stored in a variable:
 
 ---
-### Input:
+#### Input:
 ```json
 {
   "name": "Ana",
   "age": 29
 }
 ```
-### DW Script:
+#### DW Script:
 ```dw
 %dw 2.0
 output application/json
@@ -41,16 +41,20 @@ var ageKeyName = "age"
 —--
 payload[ageKeyName]
 ```
-### Output:
+#### Output:
 ```json
 29
 ```
 ---
 
-If you’re dealing with a series of nested Objects, you can string together single-value selectors to get to the value you need. Given the input below, use this to get to `"prod"`.
+If you’re dealing with a series of nested Objects, you can string together single-value selectors to get to the value you need.
+
+## Exercise
+
+Given the input below, string together selections to get to `"prod"`.
 
 ---
-### Input:
+#### Input:
 ```json
 {
   "environment": {

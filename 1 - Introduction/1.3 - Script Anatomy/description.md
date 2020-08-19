@@ -3,7 +3,7 @@
 Let’s go over the anatomy of a DataWeave script using the code from the last example:
 
 ---
-## DW Script:
+#### DW Script:
 ```dw
 %dw 2.0
 input payload application/json

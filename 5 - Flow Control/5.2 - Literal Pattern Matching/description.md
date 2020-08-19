@@ -1,4 +1,4 @@
-# Pattern Match with literal values
+# 5.2 - Pattern Matching with Literal Values
 
 Pattern matching is another method of flow control, but it does quite a bit more under the hood than the if/else expression does, and the syntax is a little more complicated. Like the if/else expression, pattern matching also returns a single value. Here’s a simplification of how pattern matching expressions are formatted:
 
@@ -12,17 +12,13 @@ Pattern matching is another method of flow control, but it does quite a bit more
 
 The easiest way to understand basic pattern matching it to show an example:
 
-
-### Input:
-
+#### Input:
 ```json
 {
   "action": "buy"
 }
 ```
-
-### DW Script:
-
+#### DW Script:
 ```dw
 %dw 2.0
 output application/json
@@ -34,16 +30,12 @@ payload.action match {
   else   -> "Invalid input"
 }
 ```
-
-### Output:
-
+#### Output:
 ```json
 "Buy at market price"
 ```
-
 ---
 
-## Excercise 
+## Exercise
 
 Given the value of the field `status` of the `payload` that can be "Active" or "Disabled" return 1 for "Active" and 0 for "Disabled"
-

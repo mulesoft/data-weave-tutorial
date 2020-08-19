@@ -1,15 +1,15 @@
-# The mapObject function
+# 8.2 - The mapObject function
 
-mapObject has the same relation to map that filterObject has to filter. In this case, mapObject maps an Object to an new Object instead of an Array to a new Array. Here's the type signature for mapObject:
-
+`mapObject` has the same relation to map that `filterObject` has to `filter`. In this case, `mapObject` maps an Object to an new Object instead of an Array to a new Array. Here's the type signature for `mapObject`:
+```
 mapObject(Object<K,V>, (V,K,Number) -> Object): Object
+```
+`mapObject` takes in an Object, and a lambda that takes in 3 parameters, a value, key, and index, and returns a new Object. Finally, the entire function returns an Object.
 
-mapObject takes in an Object, and a lambda that takes in 3 parameters, a value, key, and index, and returns a new Object. Finally, the entire function returns an Object.
-
-We use mapObject when we want to change the keys and/or values on an Object to be something else. We might want to make all the keys upper case:
+We use `mapObject` when we want to change the keys and/or values on an Object to be something else. We might want to make all the keys upper case:
 
 ---
-### Input
+#### Input
 ```json
 {
   "firstName": "Avery",
@@ -18,8 +18,7 @@ We use mapObject when we want to change the keys and/or values on an Object to b
   "occupation": "Physicist"
 }
 ```
-
-### DW Script
+#### DW Script
 ```dw
 %dw 2.0
 output application/json
@@ -28,8 +27,7 @@ payload mapObject (value, key, index) -> {
   (upper(key)): value
 }
 ```
-
-### Output
+#### Output
 ```json
 {
   "FIRSTNAME": "Avery",
@@ -40,11 +38,12 @@ payload mapObject (value, key, index) -> {
 ```
 ---
 
-(Ch) What happens if you remove the parentheses around upper(k) in the DW script above?
+- What happens if you remove the parentheses around upper(k) in the DW script above?
 
-mapObject is also useful when you need to be more precise and what parts of the Object you transform. For example, you might only want to modify the value for a certain key. You can use if/else to catch the key:value pair you want to modify, and pass through all the other key:value pairs without modifying them:
+`mapObject` is also useful when you need to be more precise and what parts of the Object you transform. For example, you might only want to modify the value for a certain key. You can use if/else to catch the key:value pair you want to modify, and pass through all the other key:value pairs without modifying them:
 
-### Input
+---
+#### Input
 ```json
 {
   "firstName": "Avery",
@@ -53,21 +52,19 @@ mapObject is also useful when you need to be more precise and what parts of the 
   "occupation": "Physicist"
 }
 ```
-
-### DW Script
+#### DW Script
 ```dw
 payload mapObject (value, key, index) ->
-  if (key ~= "age") 
+  if (key ~= "age")
     {
         (key): value + 1
     }
-  else 
+  else
     {
         (key): value
     }
 ```
-
-### Output
+#### Output
 ```json
 {
   "firstName": "Avery",
@@ -78,8 +75,8 @@ payload mapObject (value, key, index) ->
 ```
 ---
 
-- (Ch) Make a function, birthday, that takes in an Object, and increments the key "age" if found.
+- Make a function, birthday, that takes in an Object, and increments the key "age" if found.
 
-- (Ch) Make the birthday function more general by also allowing the user to supply the key. For example if the input object was the variable `var obj = {"yearsOld": 23, "age": 23}`, you could call the function like this: birthday(obj, "yearsOld"), and it would increment the "yearsOld" key instead of the "age" key.
+- Make the birthday function more general by also allowing the user to supply the key. For example if the input object was the variable `var obj = {"yearsOld": 23, "age": 23}`, you could call the function like this: birthday(obj, "yearsOld"), and it would increment the "yearsOld" key instead of the "age" key.
 
-- (Ch) Change the `~=` to `==`. Does the function still work? Why?
+- Change the `~=` to `==`. Does the function still work? Why?
