@@ -15,8 +15,8 @@ var name = "Max the Mule"
 In order to reference the variable just use the name of the variable
 
 ```dw
-var name = "Max the Mule"
 output application/json
+var name = "Max the Mule"
 ---
 name
 ```

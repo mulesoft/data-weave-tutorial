@@ -1,0 +1,1 @@
+To get the all the values of the `id` keys you should combine the descendant selector with the multi-value selector `payload..*keyName`.
