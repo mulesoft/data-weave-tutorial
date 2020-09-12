@@ -1,0 +1,74 @@
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            name "mule-releases"
+            url "https://repository.mulesoft.org/nexus/content/repositories/releases/"
+        }
+        maven {
+            name "mule-snapshots"
+            url "http://repository.mulesoft.org/nexus/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath "org.mule.weave:weave-gradle-plugin:" + weavedocVersion
+        classpath "com.monochromeroad.gradle-plugins:gradle-aws-s3-sync:0.10"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'dataweave'
+group = "org.mule.weave"
+version = "0.0.1-SNAPSHOT"
+
+repositories {
+    mavenLocal()
+    mavenCentral()        
+    maven {
+        name "mule-releases"
+        url "http://repository.mulesoft.org/nexus/content/repositories/releases/"
+    }
+    maven {
+        name "mule-snapshots"
+        url "http://repository.mulesoft.org/nexus/content/repositories/snapshots/"
+    }         
+}
+
+dependencies {        
+    testCompile group: 'org.mule.weave', name: 'wtf', version: wtfVersion
+    testCompile group: 'org.mule.weave', name: 'yaml-module', version: weaveVersion
+}
+
+task docs(type: Zip) {
+    from 'src/main/docs/'
+}
+
+
+ext {
+    aws = [
+            accessKey: System.getenv("AWS_ACCESS_KEY_ID"),
+            secretKey: System.getenv("AWS_SECRET_KEY")
+    ]
+}
+
+import com.monochromeroad.gradle.plugin.aws.s3.S3Sync
+
+task uploadDistro(type: S3Sync) {
+    description = "Deploy tutorial"
+    accessKey aws.accessKey
+    secretKey aws.secretKey
+    noDelete true
+    acl com.monochromeroad.gradle.plugin.aws.s3.ACL.PublicRead
+    from "build/distributions/"
+    into "weave-tutorial"
+}
+
+
+docs.dependsOn(weavetest)
+build.dependsOn(docs)
+
