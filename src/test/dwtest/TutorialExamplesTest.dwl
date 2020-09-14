@@ -3,10 +3,10 @@
 */
 %dw 2.0
 
-import ls, nameOf, contentOf, mimeTypeOf, baseNameOf, path,toUrl, kindOf from dw::io::file::FileSystem
+import ls, nameOf, contentOf, mimeTypeOf, baseNameOf, path,toUrl, kindOf, wd from dw::io::file::FileSystem
 import createTestCases from dw::test::internal::DWITUtils
 import * from dw::test::Tests
-var directory = "/Users/mdeachaval/labs/mulesoft-labs/data-weave-tutorial/src/main/docs"
+var directory = dw::Runtime::prop("docsDir") default path(wd() , "src/main/docs")
 
 fun createTutorialTests(docsDirectory:String) = do {
   ls(docsDirectory)
