@@ -48,7 +48,7 @@ The lambda passed to `groupBy` takes in an item from the input Array, and the in
 #### DW Script
 ```
 %dw 2.0
-output application/json
+output json
 ---
 payload groupBy (event, idx) -> event.dayOfWeek
 ```
@@ -102,7 +102,7 @@ payload groupBy (event, idx) -> event.dayOfWeek
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload groupBy (n, idx) -> isEven(n)
 ```

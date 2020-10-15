@@ -27,8 +27,8 @@ group = "org.mule.weave"
 version = "0.0.1-SNAPSHOT"
 
 repositories {
-    mavenLocal()
-    mavenCentral()        
+    // mavenLocal()
+    mavenCentral()
     maven {
         name "mule-releases"
         url "http://repository.mulesoft.org/nexus/content/repositories/releases/"
@@ -36,10 +36,10 @@ repositories {
     maven {
         name "mule-snapshots"
         url "http://repository.mulesoft.org/nexus/content/repositories/snapshots/"
-    }         
+    }
 }
 
-dependencies {        
+dependencies {
     testCompile group: 'org.mule.weave', name: 'wtf', version: wtfVersion
     testCompile group: 'org.mule.weave', name: 'yaml-module', version: weaveVersion
 }
@@ -71,4 +71,3 @@ task uploadDistro(type: S3Sync) {
 
 docs.dependsOn(weavetest)
 build.dependsOn(docs)
-

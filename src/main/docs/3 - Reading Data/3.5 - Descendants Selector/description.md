@@ -24,7 +24,7 @@ The descendants selector (`..`) is the perfect tool to use when you need the val
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 payload..echo
 ```

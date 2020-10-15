@@ -11,6 +11,7 @@ Logical operators allow you to write `true`/`false` kind of expression.
 |`A >= B`|Greater than or equal to|
 |`A <= B`|Less than or equal to|
 |`A == B`|Equal to|
+|`A != B`|Not equal to|
 |`A ~= B`|Similar to|
 |`not A`|Logical negation|
 |`!A`|Logical negation|

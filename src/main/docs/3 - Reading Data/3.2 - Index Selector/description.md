@@ -10,7 +10,7 @@ Now that we understand how to traverse Objects with the single-value selector, l
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 payload[1]
 ```

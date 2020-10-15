@@ -6,7 +6,7 @@ This is the last simple type we’ll cover in this tutorial. The `Boolean` type 
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 {
   "yes": true,

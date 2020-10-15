@@ -20,7 +20,7 @@ Here’s a concrete example:
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 var action = if (payload.price < 100) "buy" else "hold"
 —--
 {

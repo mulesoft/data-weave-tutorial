@@ -11,7 +11,7 @@ If you need multiple sequential values from an Array, DataWeave allows you to se
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 payload[0 to 1]
 ```

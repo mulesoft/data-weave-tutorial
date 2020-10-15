@@ -6,7 +6,7 @@ DataWeave also supports numbers with the `Number` type, covering both integer an
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 1
 ```

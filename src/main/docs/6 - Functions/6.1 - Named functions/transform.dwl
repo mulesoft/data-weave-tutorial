@@ -1,5 +1,5 @@
 %dw 2.0
-output application/json
+output json
 
 fun isOddNum(n) =
   (n mod 2) == 1

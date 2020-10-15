@@ -1,5 +1,5 @@
 %dw 2.0
-input payload application/json
-output application/csv header=true
+input payload json
+output csv header=true
 ---
 payload

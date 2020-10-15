@@ -6,7 +6,7 @@ Strings are defined between quotes. For example, the following script takes no i
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 "hello"
 ```

@@ -27,7 +27,7 @@ The multi-value selector (`.*`) returns an Array containing any value that match
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 payload.*price
 ```
@@ -55,7 +55,7 @@ Let’s see how the multi-value selector works on Objects:
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 payload.*name
 ```

@@ -1,5 +1,5 @@
 %dw 2.0
-output application/json
+output json
 
 var data = {
   "name": "Max the Mule",

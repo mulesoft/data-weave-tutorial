@@ -26,7 +26,7 @@ Here’s an example of using `pluck` to take in an Object, and create an Array w
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload pluck (v,k,idx) -> {(k): v}
 ```
@@ -89,7 +89,7 @@ payload pluck (v,k,idx) -> {(k): v}
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload groupBy (item,idx) -> item.orderId
 ```
@@ -142,7 +142,7 @@ Using `pluck` after `groupBy` accomplishes this nicely:
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload
   groupBy ((orderLine,idx) -> orderLine.orderId)

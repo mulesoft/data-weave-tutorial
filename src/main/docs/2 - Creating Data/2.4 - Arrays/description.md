@@ -6,7 +6,7 @@ Arrays are an ordered series of values where the values can be of any type:
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 ["1", 2, "3", 4, "five"]
 ```

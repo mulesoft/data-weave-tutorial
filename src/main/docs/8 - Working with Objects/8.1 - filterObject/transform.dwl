@@ -1,4 +1,4 @@
 %dw 2.0
-output application/json
+output json
 ---
 payload filterObject (value, key, index) -> value contains "Jerry"

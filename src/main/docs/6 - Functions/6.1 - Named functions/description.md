@@ -24,7 +24,7 @@ Here’s a simple example of creating a function and calling it:
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 
 fun add(n, m) =
   n + m

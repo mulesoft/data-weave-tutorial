@@ -21,7 +21,7 @@ Filtering by value works the same as with Arrays:
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload filterObject (value, key, index) -> value contains "Jerry"
 ```
@@ -46,7 +46,7 @@ Filtering by index might seem odd for Objects because the order of key:value pai
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload filterObject (value, key, index) -> index == 2
 ```
@@ -72,7 +72,7 @@ Filtering by key deserves some attention, however:
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload filterObject (value, key, index) -> key == "age"
 ```

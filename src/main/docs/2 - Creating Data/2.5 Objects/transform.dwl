@@ -1,5 +1,5 @@
 %dw 2.0
-output application/xml
+output xml
 ---
 titles: {
     title: "Titanic",

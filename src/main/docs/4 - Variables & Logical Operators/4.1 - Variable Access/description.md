@@ -12,7 +12,7 @@ An expression is something that returns a value, or is a value itself. This valu
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 var mascot = "Max the Mule"
 ---
 mascot

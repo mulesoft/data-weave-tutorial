@@ -6,7 +6,7 @@ Objects are a series of key-value mappings, where the value can be of any type:
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 {
   one: [1],

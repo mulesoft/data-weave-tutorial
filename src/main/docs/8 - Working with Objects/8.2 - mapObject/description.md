@@ -21,7 +21,7 @@ We use `mapObject` when we want to change the keys and/or values on an Object to
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload mapObject (value, key, index) -> {
   (upper(key)): value

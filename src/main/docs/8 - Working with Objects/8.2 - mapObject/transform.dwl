@@ -1,12 +1,12 @@
 %dw 2.0
-output application/json
+output json
 ---
 payload mapObject (value, key, index) ->
-  if (key ~= "age") 
+  if (key ~= "age")
     {
         (key): value + 1
     }
-  else 
+  else
     {
         (key): value
     }

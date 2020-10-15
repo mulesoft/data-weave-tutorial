@@ -24,7 +24,7 @@ You can check the type of a value by using `typeOf`:
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 typeOf({})
 ```

@@ -6,7 +6,7 @@ HOFs are so prolific in DataWeave’s library that there are additional syntax f
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 
 var numbers = (1 to 5) // Generates [1, 2, ..., 5]
 ---

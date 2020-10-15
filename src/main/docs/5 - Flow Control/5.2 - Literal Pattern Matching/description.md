@@ -22,7 +22,7 @@ The easiest way to understand basic pattern matching it to show an example:
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 payload.action match {
   case "buy"  -> “Buy at market price"

@@ -1,5 +1,5 @@
 %dw 2.0
-input payload application/json
-output application/yaml
+input payload json
+output yaml
 ---
 payload

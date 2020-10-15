@@ -20,7 +20,7 @@ Aside from the lambda returning Any, this function signature is identical to fil
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload distinctBy $.id
 ```
@@ -53,7 +53,7 @@ You might also need to combine multiple values in an Object to determine uniquen
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload distinctBy (order, idx) ->
   order.orderId ++ order.lineId

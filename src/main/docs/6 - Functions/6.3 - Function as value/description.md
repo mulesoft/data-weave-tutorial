@@ -14,7 +14,7 @@ In other words, lambdas become useful when you want to pass functions as argumen
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 
 fun isOdd(n) =
   (n mod 2) == 1
@@ -39,7 +39,7 @@ While the code above is ok, it’s a little inconvenient. We had to give a name 
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 
 var numbers = (1 to 5) // Generates [1, 2, ..., 5]
 ---

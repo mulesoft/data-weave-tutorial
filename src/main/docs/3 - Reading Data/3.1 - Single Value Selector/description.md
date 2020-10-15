@@ -13,7 +13,7 @@ The single-value selector (`.`) allows you to lookup Object values by their key.
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 payload.age
 ```
@@ -37,7 +37,7 @@ You can also use the single-value selector with square brackets instead of a per
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 —--
 payload[payload.dynamicKey]
 ```

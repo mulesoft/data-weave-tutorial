@@ -19,7 +19,7 @@ The lambda’s job is to take in each item of type `T` from the input Array, as 
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload map (n, idx) -> n + 1
 ```
@@ -60,7 +60,7 @@ That script adds 1 to every value in the input Array.
 #### DW Script
 ```
 %dw 2.0
-output application/json
+output json
 ---
 payload
 ```

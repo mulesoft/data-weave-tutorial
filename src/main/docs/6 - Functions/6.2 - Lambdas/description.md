@@ -15,7 +15,7 @@ Here’s how we might try to use a lambda in a DataWeave script:
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 () -> 2 + 3
 ```
@@ -44,7 +44,7 @@ But lambdas don’t have names, that’s the whole point! In order to force a la
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 (() -> 2 + 3)()
 ```
@@ -66,7 +66,7 @@ Because lambdas are values just like Strings, we can assign them to variables. T
 #### DW Script
 ```dw
 %dw 2.0
-output application/json
+output json
 
 var add = (n, m) -> n + m
 ---

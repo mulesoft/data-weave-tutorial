@@ -1,5 +1,5 @@
 %dw 2.0
-output application/json
+output json
 ---
 payload.status match {
     case 0 -> "Light off"

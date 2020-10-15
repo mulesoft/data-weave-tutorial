@@ -10,7 +10,7 @@ This syntax is preferred for nearly every function that takes a lambda as its se
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 
 var numbers = (1 to 5) // Generates [1, 2, ..., 5]
 ---
@@ -28,7 +28,7 @@ This may not seem like a great advantage, but it allows you to easily chain toge
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 
 var numbers = (1 to 5) // Generates [1, 2, ..., 5]
 ---
