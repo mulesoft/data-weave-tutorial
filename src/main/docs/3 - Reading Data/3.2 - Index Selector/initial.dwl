@@ -1,4 +1,4 @@
 %dw 2.0
 output application/json
 —--
-payload[1]
+payload[0]

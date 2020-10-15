@@ -23,23 +23,23 @@ payload.age
 ```
 ---
 
-You can also use the single-value selector with square brackets instead of a period. This allows you to do useful things like use a key that references a value stored in a variable:
+You can also use the single-value selector with square brackets instead of a period. This allows you to do useful things like using a dynamic key:
 
 ---
 #### Input:
 ```json
 {
   "name": "Ana",
-  "age": 29
+  "age": 29,
+  "dynamicKey": "age"
 }
 ```
 #### DW Script:
 ```dw
 %dw 2.0
 output application/json
-var ageKeyName = "age"
 —--
-payload[ageKeyName]
+payload[payload.dynamicKey]
 ```
 #### Output:
 ```json

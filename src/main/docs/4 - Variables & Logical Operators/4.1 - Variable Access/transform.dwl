@@ -1,5 +1,11 @@
 %dw 2.0
-
-var user = {name: "Data Weave"}
+output application/json
+var secondLevel = payload.secondLevel
 ---
-user.name
+{
+    "descendant": payload..id,
+    "multivalue": payload.*id,
+    "multivalueSecondLevel": secondLevel.*id,
+    "multivalueThirdLevel": secondLevel.thirdLevel.*id,
+    "allTheIds" : payload..*id
+}

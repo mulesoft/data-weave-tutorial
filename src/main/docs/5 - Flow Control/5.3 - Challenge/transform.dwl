@@ -2,6 +2,6 @@
 output application/json
 ---
 if (payload.status == "ok")
-    {"message": "success"}
+    {"message": "Request successfully processed."}
 else
-    {"message": "failure"}
+    {"message": "Please try again later."}

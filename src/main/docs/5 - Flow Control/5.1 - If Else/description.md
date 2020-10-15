@@ -2,14 +2,15 @@
 
 If/else expressions allow you to make decisions using logical operators and branch as a result.
 
-
 ```
 if (<criteria_expression>) <return_if_true> else <return_if_false>
 ```
 
-> There are cases in DW where parentheses are optional, but it’s important to note the criteria must be surrounded by parentheses in if/else expressions. Here’s a concrete example:
+> There are cases in DW where parentheses are optional, but it’s important to note the criteria must be surrounded by parentheses in if/else expressions.
 
+Here’s a concrete example:
 
+----
 #### Input:
 ```json
 {
@@ -20,7 +21,6 @@ if (<criteria_expression>) <return_if_true> else <return_if_false>
 ```dw
 %dw 2.0
 output application/json
-
 var action = if (payload.price < 100) "buy" else "hold"
 —--
 {
@@ -35,10 +35,11 @@ var action = if (payload.price < 100) "buy" else "hold"
   "action": "hold"
 }
 ```
+----
 
 If you’re familiar with popular languages like Java, or C#, you’ll notice the way DataWeave implements if/else is much closer to a ternary expression that the if/else statements you see in those languages. The difference is very simple, however. DW uses if/else expressions that returns values, Java and C# us if/else statements that do not return values.
 
-If/else expressions are chainable, meaning you can do multiple checks before you return any data. Here’s the format for how that works:
+If/else expressions can be chained together, meaning you can do multiple checks before you return any data. Here’s the format for how that works:
 
 ```
 if (<criteria_expression1>)
@@ -49,41 +50,19 @@ else
   <return_if_no_other_match>
 ```
 
-You can have as many of these if/else chains as necessary. Imagine you had a third option in addition to “buy” and “hold”, “sell”. You could chain if/else expressions together to account for this additional criteria:
+You can have as many of these if/else chains as necessary.
 
-
-#### Input:
-```json
-{
-  "price": 100.00
-}
-```
-#### DW Script:
-```
-%dw 2.0
-output application/json
-
-var action = if (payload.price < 99)
-               "buy"
-             else if (payload.price > 101)
-               "sell"
-             else
-               "hold"
-—--
-{
-  price  : payload.price,
-  action : action
-}
-```
-#### Output:
-```
-{
-  "price": 100.00,
-  "action": "hold"
-}
-```
----
+Imagine you had a third option in addition to “buy” and “hold”, “sell”. You could chain if/else expressions together to account for this additional criteria:
 
 ## Exercise
 
-Return "Toddler", "Teenager" or "Sr" based on the age of the user. We'll consider anyone under 5 a "Toddler" and those under 20 a "Teenager".
+Include a new "sell" action for our example when the price exceeds `140`.
+
+----
+#### Input:
+```json
+{
+  "price": 150.00
+}
+```
+----

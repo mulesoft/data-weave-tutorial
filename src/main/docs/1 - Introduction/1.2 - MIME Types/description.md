@@ -1,6 +1,6 @@
 # 1.2 - MIME Types
 
-While DataWeave can handle itself when it comes to parsing and serializing data, it does need to be told what data to expect and generate. This is done by specifying MIME types for the inputs and output. MIME types specify the data format of a particular document, file, or piece of data. We use them to inform DataWeave what data format to read and write. There are many MIME types, but DataWeave only uses a subset of them that make sense for its data transformation domain. Of that subset, we will be mainly focusing on 3 sfor this tutorial:
+While DataWeave can handle itself when it comes to parsing and serializing data, it does need to be told what data to expect and generate. This is done by specifying MIME types for the inputs and output. MIME types specify the data format of a particular document, file, or piece of data. We use them to inform DataWeave what data format to read and write. There are many MIME types, but DataWeave only uses a subset of them that make sense for its data transformation domain. Of that subset, we will be mainly focusing on 3 for this tutorial:
 
 * XML: application/xml
 * JSON: application/json
@@ -42,7 +42,7 @@ Jane,Doe,34
 
 ## Exercise
 
-Modify your script so that the CSV output includes the header:
+Modify your script so that the CSV output includes the header. Here's what it should look like:
 
 ---
 #### Output:

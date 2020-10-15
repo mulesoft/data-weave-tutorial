@@ -7,19 +7,20 @@ The multi-value selector (`.*`) returns an Array containing any value that match
 ```json
 [
   {
-    "number": 1,
-    "number": 2
+    "price": 1,
+    "price": 2
   },
   {
-    "number": 3,
-    "number": 4
+    "price": 3,
+    "price": 4
   },
   {
-    "number": 5,
-    "number": 6
+    "price": 5,
+    "price": 6
   },
   {
-    "string": "foo"
+    "name": "Starburst",
+    "category": "Candy"
   }
 ]
 ```
@@ -28,7 +29,7 @@ The multi-value selector (`.*`) returns an Array containing any value that match
 %dw 2.0
 output application/json
 —--
-payload.*number
+payload.*price
 ```
 #### Output:
 ```json
@@ -44,10 +45,11 @@ Let’s see how the multi-value selector works on Objects:
 #### Input:
 ```json
 {
-  "number": 1,
-  "number": 2,
-  "number": 3,
-  "string": 4
+  "name": "Emilia",
+  "name": "Isobel",
+  "name": "Euphemia",
+  "name": "Rose",
+  "surname": "Clarke"
 }
 ```
 #### DW Script:
@@ -55,11 +57,11 @@ Let’s see how the multi-value selector works on Objects:
 %dw 2.0
 output application/json
 —--
-payload.*number
+payload.*name
 ```
 #### Output:
 ```json
-[1, 2, 3]
+["Emilia", "Isobel", "Euphemia", "Rose"]
 ```
 ---
 
@@ -67,17 +69,17 @@ The multi-value selector works on Objects by getting the value for every key tha
 
 ## Exercise
 
-Use the multi-value selector to get an Array of all `number` values in this input:
+Use the multi-value selector to get an Array of all `title` values in this input:
 
 ---
 #### Input:
 ```xml
-<data>
-  <number>1</number>
-  <number>2</number>
-  <number>3</number>
-  <string>Hello</string>
-</data>
+<movies>
+  <title>The Terminator</title>
+  <title>Titanic</title>
+  <title>Avatar</title>
+  <director>James Cameron</director>
+</movies>
 ```
 ---
 

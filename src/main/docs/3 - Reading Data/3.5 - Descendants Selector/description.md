@@ -6,13 +6,17 @@ The descendants selector (`..`) is the perfect tool to use when you need the val
 #### Input:
 ```json
 {
-  "target": {"hello": "world"},
-  "data": [
+  "echo": {"value": "Hello there!"},
+  "sequence": [
     {
-      "target": "foo",
-      "more": {
-        "target": "bar"
+      "echo": "Getting details...",
+      "try": {
+        "curl": "somelocation.com",
+        "echo": "Success!"
       }
+    },
+    {
+      "grep": "Success"
     }
   ]
 }
@@ -22,13 +26,15 @@ The descendants selector (`..`) is the perfect tool to use when you need the val
 %dw 2.0
 output application/json
 —--
-payload..target
+payload..echo
 ```
 #### Output:
 ```json
-[{"hello": "world"}, "foo", "bar"]
+[{ "value": "Hello there!"}, "Getting details...", "Success!"]
 ```
 ---
+
+> This selector can be combined with the multi value selector to also find repeated keys.
 
 ## Exercise
 

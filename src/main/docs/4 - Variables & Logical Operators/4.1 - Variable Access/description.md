@@ -6,29 +6,73 @@ Like other languages, DataWeave has variables so that you can store values to us
 var <var_name> = <expression>
 ```
 
-An expression is something that returns a value, or is a value itself. Here’s an example of setting a variable to an explicit value:
+An expression is something that returns a value, or is a value itself. This value can then be referenced using the variable name. Here’s an example of setting a variable to an explicit value:
 
-```dw
-var name = "Max the Mule"
-```
-
-In order to reference the variable just use the name of the variable
-
-```dw
-output application/json
-var name = "Max the Mule"
 ---
-name
+#### DW Script:
+```dw
+%dw 2.0
+output application/json
+var mascot = "Max the Mule"
+---
+mascot
 ```
-
-This script will output
-
+#### Output:
 ```json
 "Max the Mule"
 ```
+---
 
-Variables are almost always declared in the header of the script, where you set other declarations. 
+Variables are almost always declared in the header of the script, where you set other declarations.
 
-## Excercise
+## Exercise
 
-Given the a variable named user declared as `var user = {name: "Data Weave"}` try to access the field `name` inside.
+Let's complete the last challenge again, but this time using a variable to avoid repeated references.
+
+---
+#### Input:
+```json
+{
+  "id": 1,
+  "id": 11,
+  "secondLevel": {
+    "id": 2,
+    "id": 22,
+    "thirdLevel": {
+      "id": 3,
+      "id": 33
+    }
+  }
+}
+```
+#### Output:
+```json
+{
+  "descendant": [
+    1,
+    2,
+    3
+  ],
+  "multivalue": [
+    1,
+    11
+  ],
+  "multivalueSecondLevel": [
+    2,
+    22
+  ],
+  "multivalueThirdLevel": [
+    3,
+    33
+  ],
+  "allTheIds": [
+    1,
+    11,
+    2,
+    22,
+    3,
+    33
+  ]
+}
+```
+----

@@ -2,8 +2,9 @@
 output application/json
 ---
 {
-    "descendant": ???,
-    "multivalue": ???,
-    "multivalueSecondLevel": ???,
-    "allTheIds" : ???
+    "descendant": [],
+    "multivalue": [],
+    "multivalueSecondLevel": [],
+    "multivalueThirdLevel": [],
+    "allTheIds" : []
 }

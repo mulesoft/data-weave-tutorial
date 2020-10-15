@@ -12,6 +12,7 @@ Pattern matching is another method of flow control, but it does quite a bit more
 
 The easiest way to understand basic pattern matching it to show an example:
 
+----
 #### Input:
 ```json
 {
@@ -34,8 +35,19 @@ payload.action match {
 ```json
 "Buy at market price"
 ```
----
+----
 
 ## Exercise
 
-Given the value of the field `status` of the `payload` that can be "Active" or "Disabled" return 1 for "Active" and 0 for "Disabled"
+Use pattern matching to return `"Light off"` when the status for the input below is `0` or `"Light on"` when the status is `1`.
+
+----
+#### Input:
+```json
+{
+  "id": 290505,
+  "status": 0,
+  "name": "Cabin outdoor light"
+}
+```
+----

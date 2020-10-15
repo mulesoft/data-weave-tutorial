@@ -28,7 +28,7 @@ After the first three lines of the script there is a line only containing three 
 Finally, the last line of the script is the output section. Whatever the output section evaluates to is what gets sent to the writer, and is ultimately serialized into the specified output format.
 
 > The input directive is not required in some scenarios when the DataWeave execution itself is contextualized and the input derived from said context. For example, in [Mule](github.com/mulesoft/mule) their event concept provides the context, adding inputs such as `payload` and `vars`, with their respective MIME type information.
-Following this tutorial, we will avoid the input directive and assume a single input named `payload`.
+After this section, we will avoid the input directive and assume a single input named `payload` throughout the rest of the tutorial.
 
 ## Exercise
 

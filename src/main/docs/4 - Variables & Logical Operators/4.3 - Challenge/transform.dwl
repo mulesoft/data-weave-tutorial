@@ -6,9 +6,10 @@ var data = {
   "locations": [
     {
       "name": "Max’s house",
-      "address": "1234 Mule Street"
+      "address": "1234 Mule Street",
+      "state": "CA"
     }
   ]
 }
 ---
-[data..name, data.locations[0].address]
+[data..name, data.locations[0].address, data.locations[0].state != "CA"]

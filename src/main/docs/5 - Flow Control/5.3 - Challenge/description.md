@@ -1,6 +1,10 @@
 # 5.3 - Challenge
 
-Pretend you’re developing a flow, and at this point in the flow you have some data that you can use to determine if the application processed the request correctly. You need to output a machine-readable message to the caller informing them that everything went as expected, or there was a failure. If everything went well, the input will contain `{"status": "ok"}`, if not the input will contain `{"status": "failure"}`.  Output `{"message": "success"}` if the status is "ok", and output `{"message": "failure"}` if the status is anything else. Your solution should be able to compensate for both input types.
+Pretend you’re developing a flow, and at this point in the flow you have some data that you can use to determine if the application processed the request correctly. You need to output a human-readable message to the caller informing them that everything went as expected, or there was a failure.
+
+If everything went well, the input will contain `{"status": "ok"}`, if not the input will contain `{"status": "failed"}`.  
+
+Output `{"message": "Request successfully processed."}` if the status is "ok", and output `{"message": "Please try again later."}` if the status is anything else. Your solution should be able to compensate for both input types.
 
 ---
 #### Input:
@@ -10,19 +14,19 @@ Pretend you’re developing a flow, and at this point in the flow you have some 
 
 #### Output:
 ```json
-{"message": "success"}
+{"message": "Request successfully processed."}
 ```
 ---
 
 ---
 #### Input:
 ```json
-{"status": "failure"}
+{"status": "failed"}
 ```
 
 #### Output:
 ```json
-{"message": "failure"}
+{"message": "Please try again later."}
 ```
 ---
 

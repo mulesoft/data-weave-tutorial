@@ -1,11 +1,13 @@
 %dw 2.0
 output application/json
-
-var user = {name: "Peter", age: 19}
+var action = if (payload.price < 100)
+                "buy"
+              else if (payload.price > 140)
+                "sell"
+              else
+                "hold"
 ---
-if(user.age <= 5)
- "Toddler"
-else if(user.age < 20)
- "Teenager"
-else
- "Sr"
+{
+  price  : payload.price,
+  action : action
+}

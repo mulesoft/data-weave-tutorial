@@ -21,4 +21,8 @@ payload[0 to 1]
 ```
 ---
 
-Just like with the index selector, negative indexes can be used to select a range of values starting from the end of the Array. Use negative indexes to obtain the reverse order of the above input.
+Just like with the index selector, negative indexes can be used to select a range of values starting from the end of the Array.
+
+## Exercise
+
+Use negative indexes to obtain the reverse order of the above input.

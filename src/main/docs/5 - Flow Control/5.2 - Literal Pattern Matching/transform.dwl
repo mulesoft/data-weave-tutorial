@@ -2,6 +2,6 @@
 output application/json
 ---
 payload.status match {
-    case "Active" -> 1
-    case "Disabled" -> 0
+    case 0 -> "Light off"
+    case 1 -> "Light on"
 }

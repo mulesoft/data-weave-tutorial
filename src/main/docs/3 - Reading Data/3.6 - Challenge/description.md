@@ -3,7 +3,6 @@
 Use what you know about selectors to get the output specified below from this input data.
 
 ---
-
 #### Input:
 ```json
 {
@@ -19,7 +18,6 @@ Use what you know about selectors to get the output specified below from this in
   }
 }
 ```
-
 #### Output:
 ```json
 {
@@ -35,6 +33,10 @@ Use what you know about selectors to get the output specified below from this in
   "multivalueSecondLevel": [
     2,
     22
+  ],
+  "multivalueThirdLevel": [
+    3,
+    33
   ],
   "allTheIds": [
     1,

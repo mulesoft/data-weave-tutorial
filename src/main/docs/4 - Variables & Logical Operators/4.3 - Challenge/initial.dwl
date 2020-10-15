@@ -6,9 +6,10 @@ var data = {
   "locations": [
     {
       "name": "Max’s house",
-      "address": "1234 Mule Street"
+      "address": "1234 Mule Street",
+      "state": "CA"
     }
   ]
 }
 ---
-???
+[]
