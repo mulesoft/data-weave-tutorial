@@ -1,6 +1,6 @@
-<data>
-  <number>1</number>
-  <number>2</number>
-  <number>3</number>
-  <string>Hello</string>
-</data>
+<movies>
+  <title>The Terminator</title>
+  <title>Titanic</title>
+  <title>Avatar</title>
+  <director>James Cameron</director>
+</movies>

@@ -2,7 +2,7 @@
 
 This tutorial will cover the most common DataWeave functions you will need to work with Arrays.
 
-We will start with a brief review of `filter`, used to remove items from an Array based on some criteria. Since this function was covered in the last tutorial, we’ll take this opportunity to learn about type signature for functions.
+We will start with a brief review of `filter`, used to remove items from an Array based on some criteria. Since this function was covered in the last tutorial, we’ll take this opportunity to learn about type signatures for functions.
 
 We’ll then discuss `map`, which is used to transform every item in an Array into something else.
 
