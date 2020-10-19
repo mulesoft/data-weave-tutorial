@@ -1,1 +1,27 @@
-"Data Weave"
+{
+  "descendant": [
+    1,
+    2,
+    3
+  ],
+  "multivalue": [
+    1,
+    11
+  ],
+  "multivalueSecondLevel": [
+    2,
+    22
+  ],
+  "multivalueThirdLevel": [
+    3,
+    33
+  ],
+  "allTheIds": [
+    1,
+    11,
+    2,
+    22,
+    3,
+    33
+  ]
+}
