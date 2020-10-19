@@ -1,4 +1,4 @@
 %dw 2.0
 output json
 ---
-isOddNum(2021)
+payload.value mod 2

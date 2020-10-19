@@ -9,9 +9,6 @@ DataWeave provides multiple ways to create functions. Just like we have named fu
 Here’s how we might try to use a lambda in a DataWeave script:
 
 ---
-#### Input:
-```json
-```
 #### DW Script
 ```dw
 %dw 2.0
@@ -25,9 +22,7 @@ output json
 ```
 ---
 
-> If a lambda is a value just like a String, why is there no output? (Hint: What does the JSON spec say about functions?)
-
-You may be wondering why the output was not 5. Why didn’t the function execute and return 2 + 3? Remember that functions represent functionality and therefore so do lambdas. They don’t do anything unless you call them. The lambda never executes; it’s describing functionality, not executing it. Because of this, 5 is not passed to the writer, instead, DataWeave sends () -> 2 + 3 as a value (just like a String). In turn, the writer tries to serialize it as JSON, but JSON does not support functions, hence the error.
+You may be wondering why the output was not 5 and in fact, why it is an error. Why didn’t the function execute and return 2 + 3? Remember that functions represent functionality and therefore so do lambdas. They don’t do anything unless you call them. The lambda never executes; it’s describing functionality, not executing it. Because of this, 5 is not passed to the writer, instead, DataWeave sends `() -> 2 + 3` as a value (just like a String). In turn, the writer tries to serialize it as JSON, but JSON does not support functions, hence the error.
 
 How would we get the script to return 5? Recall that in order to call functions you need to use the following syntax:
 
@@ -38,9 +33,6 @@ How would we get the script to return 5? Recall that in order to call functions 
 But lambdas don’t have names, that’s the whole point! In order to force a lambda to execute, we  surround it in parentheses and append () to the end:
 
 ---
-#### Input:
-```json
-```
 #### DW Script
 ```dw
 %dw 2.0
@@ -50,6 +42,7 @@ output json
 ```
 #### Output
 ```json
+5
 ```
 ---
 
@@ -60,9 +53,6 @@ If this syntax seems awkward, it’s because we’re using lambdas in a way they
 Because lambdas are values just like Strings, we can assign them to variables. This effectively gives a name to an unnamed function and allows us to use a lambda just like a normal function:
 
 ---
-#### Input:
-```json
-```
 #### DW Script
 ```dw
 %dw 2.0
@@ -78,8 +68,8 @@ add(2, 3)
 ```
 ---
 
-But that’s not very useful either, we already have a nicer syntax for the same thing with the fun keyword.
+But that’s not very useful either, we already have a nicer syntax for the same thing with the fun keyword. In the next section, we will see why lambdas are so important.
 
 ## Exercise
 
-Just create and call a Lambda that does the same as the `isOddNum` function from the previous exercise. The Lambda should receive one parameter and return true if that parameter is an odd number, false otherwise.
+Create and call a lambda function that does the same as the `isOddNum` function from the previous exercise. The lambda should receive one parameter and return true if that parameter is an odd number, false otherwise.

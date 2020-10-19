@@ -8,7 +8,7 @@ HOFs are so prolific in DataWeave’s library that there are additional syntax f
 %dw 2.0
 output json
 
-var numbers = (1 to 5) // Generates [1, 2, ..., 5]
+var numbers = (1 to 5)
 ---
 numbers filter (($ mod 2) == 1)
 ```
@@ -17,9 +17,6 @@ numbers filter (($ mod 2) == 1)
 [1,3,5]
 ```
 ---
-
-- Do a search online to see what additional argument(s) the lambda passed to `filter` takes. Write an expression with filter that uses the additional argument(s).
-- Write a `filter` example that uses an Array of Strings instead of Numbers.
 
 The dollar-sign syntax gives us all the same functionality as when we reference something by its name. This means we can chain selectors and indexes right off of the dollar-sign in order to query data:
 
@@ -63,6 +60,38 @@ payload filter $.price > 5
     "id": 2,
     "item": "steak",
     "price": 15.00  
+  }
+]
+```
+---
+
+## Exercise
+
+Using the dollar-sign syntax, filter the following Array so it only contains users whose names start with `"C"`.
+
+---
+#### Input:
+```json
+[
+  {
+    "name": "Jonas",
+    "family": "Kahnwald"
+  },
+  {
+    "name": "Mikke",
+    "family": "Nielsen"
+  },
+  {
+    "name": "Claudia",
+    "family": "Tiedemann"
+  },
+  {
+    "name": "Martha",
+    "family": "Nielsen"
+  },
+  {
+    "name": "Charlotte",
+    "family": "Doppler"
   }
 ]
 ```

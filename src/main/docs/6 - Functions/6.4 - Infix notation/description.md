@@ -12,7 +12,7 @@ This syntax is preferred for nearly every function that takes a lambda as its se
 %dw 2.0
 output json
 
-var numbers = (1 to 5) // Generates [1, 2, ..., 5]
+var numbers = (1 to 5)
 ---
 numbers filter ((n, idx) -> (n mod 2) == 1)
 ```
@@ -30,7 +30,7 @@ This may not seem like a great advantage, but it allows you to easily chain toge
 %dw 2.0
 output json
 
-var numbers = (1 to 5) // Generates [1, 2, ..., 5]
+var numbers = (1 to 5)
 ---
 numbers
   filter ((n, idx) -> (n mod 2) == 1)
@@ -42,12 +42,13 @@ numbers
 ```
 ---
 
-In this case, the Array if filtered on whether or not is odd, then filtered on whether or not the number is greater than 3.
+In this case, the Array is filtered on whether or not is odd, then filtered on whether or not the number is greater than 3.
+
 > Notice the additional parentheses around the first lambda. The parenthesis around the lambdas help DataWeave determine where the lambda starts and ends.
 
 ## Exercise:
 
-Filter this given array to just contain only numbers that are multiples of 5 using a lambda with infix notation.
+Filter this given array to contain only numbers that are multiples of 5 using a lambda with infix notation.
 
 ---
 #### Input:
