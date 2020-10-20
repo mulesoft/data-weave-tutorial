@@ -8,4 +8,4 @@ We’ll then discuss `map`, which is used to transform every item in an Array in
 
 We’ll follow up with `distinctBy`, and `groupBy`, which can be used to eliminate duplicates in an Array and group like-kind items together, respectively.
 
-We’ll finish with `reduce`. `reduce` is unlike the other functions because of how general-purpose it is. It’s so general that it can satisfy more use cases than all the other functions in this tutorial combined. Because of this, we will stick to a single, very common use case: collapsing an Array into an Object.
+We’ll finish with `reduce`. `reduce` is unlike the other functions because of how general-purpose it is. It’s so general that it can satisfy more use cases than all the other functions in this tutorial combined.

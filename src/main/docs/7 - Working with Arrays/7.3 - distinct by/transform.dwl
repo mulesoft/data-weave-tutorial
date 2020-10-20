@@ -8,4 +8,4 @@ var shoppingList = [
   {"orderId": "2", "lineId": "4", "product": "mouth wash"}
 ]
 ---
-shoppingList[0].item ++ " keeps your teeth healthy"
+shoppingList distinctBy ((item, index) -> item.orderId ++ item.lineId)

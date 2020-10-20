@@ -3,7 +3,7 @@
 We create functions in the declarations section of the script using the `fun` keyword. This associates a set of functionality with a name. Here’s the basic syntax:
 
 ```
-fun <function_name>([<arg1>], [<arg2>], …, [<argN>]) = <body>
+fun <function_name>(<arg1>, <arg2>, …, <argN>) = <body>
 ```
 
 It’s usually good form to put the body on a new line and indent.
