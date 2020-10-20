@@ -1,4 +1,4 @@
 %dw 2.0
 output json
 ---
-payload groupBy ((event, index) -> event.dayOfWeek)
+payload reduce ((env, acc = {}) -> acc ++ {(env.name) : env.id})

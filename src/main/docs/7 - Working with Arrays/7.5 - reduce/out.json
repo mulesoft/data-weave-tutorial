@@ -1,33 +1,6 @@
 {
-  "wed": [
-    {
-      "datetime": "2020-01-01T08:00:00",
-      "dayOfWeek": "wed",
-      "event": "Breakfast @ Cafe"
-    },
-    {
-      "datetime": "2020-01-01T18:00:00",
-      "dayOfWeek": "wed",
-      "event": "Study for cert exam"
-    },
-    {
-      "datetime": "2020-01-08T08:00:00",
-      "dayOfWeek": "wed",
-      "event": "Develop mule application"
-    }
-  ],
-  "sat": [
-    {
-      "datetime": "2020-01-04T16:00:00",
-      "dayOfWeek": "sat",
-      "event": "Drinks w/ friends"
-    }
-  ],
-  "sun": [
-    {
-      "datetime": "2020-01-05T08:00:00",
-      "dayOfWeek": "sun",
-      "event": "Football game"
-    }
-  ]
+  "dev": "1",
+  "test": "2",
+  "uat": "3",
+  "prod": "4"
 }
