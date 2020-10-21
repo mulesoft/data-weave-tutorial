@@ -1,0 +1,13 @@
+{
+  "username": "wasp",
+  "name": "Lisbeth",
+  "surname": "Salander",
+  "location": {
+    "address": {
+      "street": "Fiskargatan",
+      "number": 9
+    },
+    "city": "Stockholm",
+    "country": "Sweden"
+  }
+}
