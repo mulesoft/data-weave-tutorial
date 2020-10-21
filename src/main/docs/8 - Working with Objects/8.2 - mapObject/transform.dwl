@@ -1,12 +1,7 @@
 %dw 2.0
 output json
 ---
-payload mapObject (value, key, index) ->
-  if (key ~= "age")
-    {
-        (key): value + 1
-    }
-  else
-    {
-        (key): value
-    }
+payload
+    map ((item, index) -> item
+                            mapObject ((value, key, index) ->
+                                  {(lower(key)) : upper(value)}))

@@ -1,5 +1,9 @@
 {
-  "name": "Jerry Schumann",
-  "age": 34,
-  "address": "123 Main Street"
+    "name": "Jerry",
+    "middle_name": false,
+    "last_name": "Schumann",
+    "secret_key": "903mg20mgg4",
+    "secret_password": "d0n0tH4ckm3PLiZ",
+    "question_secret": "Do you wish to get hacked?",
+    "personal_token": false
 }

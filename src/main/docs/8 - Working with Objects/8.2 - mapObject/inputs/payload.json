@@ -1,6 +1,4 @@
-{
-  "firstName": "Avery",
-  "lastName": "Chance",
-  "age": 56,
-  "occupation": "Physicist"
-}
+[
+  {"First Name": "Max", "Last Name": "The Mule"},
+  {"First Name": "Albert", "Last Name": "Einstein"}
+]
