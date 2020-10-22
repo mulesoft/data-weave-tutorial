@@ -1,4 +1,5 @@
 %dw 2.0
 output json
+var result = {"status" : "ok"}
 ---
-payload
+result.status
