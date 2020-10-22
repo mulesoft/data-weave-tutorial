@@ -7,7 +7,7 @@ Strings are defined between quotes. For example, the following script takes no i
 ```dw
 %dw 2.0
 output json
-—--
+---
 "hello"
 ```
 #### Output:

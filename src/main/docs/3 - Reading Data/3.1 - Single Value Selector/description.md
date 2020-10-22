@@ -14,7 +14,7 @@ The single-value selector (`.`) allows you to lookup Object values by their key.
 ```dw
 %dw 2.0
 output json
-—--
+---
 payload.age
 ```
 #### Output:
@@ -38,7 +38,7 @@ You can also use the single-value selector with square brackets instead of a per
 ```dw
 %dw 2.0
 output json
-—--
+---
 payload[payload.dynamicKey]
 ```
 #### Output:

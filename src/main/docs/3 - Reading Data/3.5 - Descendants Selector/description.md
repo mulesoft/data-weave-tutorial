@@ -25,7 +25,7 @@ The descendants selector (`..`) is the perfect tool to use when you need the val
 ```dw
 %dw 2.0
 output json
-—--
+---
 payload..echo
 ```
 #### Output:

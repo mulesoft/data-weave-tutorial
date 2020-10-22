@@ -28,7 +28,7 @@ The multi-value selector (`.*`) returns an Array containing any value that match
 ```dw
 %dw 2.0
 output json
-—--
+---
 payload.*price
 ```
 #### Output:
@@ -56,7 +56,7 @@ Let’s see how the multi-value selector works on Objects:
 ```dw
 %dw 2.0
 output json
-—--
+---
 payload.*name
 ```
 #### Output:

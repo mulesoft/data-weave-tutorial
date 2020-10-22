@@ -23,7 +23,7 @@ The easiest way to understand basic pattern matching it to show an example:
 ```dw
 %dw 2.0
 output json
-—--
+---
 payload.action match {
   case "buy"  -> “Buy at market price"
   case "sell" -> "Sell at market price"

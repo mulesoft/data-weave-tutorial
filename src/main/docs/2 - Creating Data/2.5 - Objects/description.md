@@ -7,7 +7,7 @@ Objects are a series of key-value mappings, where the value can be of any type:
 ```dw
 %dw 2.0
 output json
-—--
+---
 {
   one: [1],
   two: "2"

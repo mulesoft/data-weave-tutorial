@@ -12,7 +12,7 @@ If you need multiple sequential values from an Array, DataWeave allows you to se
 ```dw
 %dw 2.0
 output json
-—--
+---
 payload[0 to 1]
 ```
 #### Output:

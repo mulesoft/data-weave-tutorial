@@ -7,7 +7,7 @@ DataWeave also supports numbers with the `Number` type, covering both integer an
 ```dw
 %dw 2.0
 output json
-—--
+---
 1
 ```
 #### Output:

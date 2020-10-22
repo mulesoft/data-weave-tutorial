@@ -25,7 +25,7 @@ You can check the type of a value by using `typeOf`:
 ```dw
 %dw 2.0
 output json
-—--
+---
 typeOf({})
 ```
 
