@@ -4,7 +4,7 @@ DataWeave is a programming language designed for transforming data. It is MuleSo
 
 DataWeave allows users to easily perform a common use case for integration developers: read and parse data from one format, transform it, and write it out as a different format. For example, a DataWeave script could take in a simple CSV file and transform it into an array of complex JSON objects. It could take in XML and write the data out to a flat file format. DataWeave allows the developer to focus on the transformation logic instead of worrying about the specifics of reading, parsing, and writing specific data formats in a performant way. Let’s take a look at how it does this.
 
-![DataWeave Execution Model](images/dw-model.png)
+![DataWeave Execution Model](https://raw.githubusercontent.com/mulesoft-labs/data-weave-tutorial/master/src/main/docs/1%20-%20Introduction/1.1%20-%20What%20is%20DataWeave%3F/images/dw-model.png)
 
 When DataWeave receives data, it puts it through the reader. The reader’s job is to parse the input data into a canonical model. It then passes that model to the DataWeave script where it is used to generate the output, which is another canonical model. That last canonical model is passed into a writer. The writer is responsible for serializing the canonical model into the desired output data format.
 
