@@ -48,3 +48,7 @@ Use what you know about selectors to get the output specified below from this in
   ]
 }
 ```
+
+- Does the descendant selector select all the keys or just the first one in a nested Object?
+- Does the multi-value selector select keys on nested levels of the Object?
+- What happens if you combine both descendant and multi-value selectors (`..*`)?

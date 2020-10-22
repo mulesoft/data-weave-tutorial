@@ -2,9 +2,9 @@
 output json
 ---
 {
-    "descendant": [],
-    "multivalue": [],
-    "multivalueSecondLevel": [],
-    "multivalueThirdLevel": [],
-    "allTheIds" : []
+    "descendant": "",
+    "multivalue": "",
+    "multivalueSecondLevel": "",
+    "multivalueThirdLevel": "",
+    "allTheIds" : ""
 }
