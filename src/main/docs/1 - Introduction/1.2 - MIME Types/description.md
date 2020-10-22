@@ -2,9 +2,11 @@
 
 While DataWeave can handle itself when it comes to parsing and serializing data, it does need to be told what data to expect and generate. This is done by specifying MIME types for the inputs and output. MIME types specify the data format of a particular document, file, or piece of data. We use them to inform DataWeave what data format to read and write. There are many MIME types, but DataWeave only uses a [subset](https://docs.mulesoft.com/mule-runtime/latest/dataweave-formats) of them that make sense for its data transformation domain. Of that subset, we will be mainly focusing on 3 for this tutorial:
 
-* XML: application/xml
-* JSON: application/json
-* CSV: application/csv
+| Name | MIME Type        | ID     |
+| :--: |:----------------:| :-----:|
+| XML  | application/xml  | `xml`  |
+| JSON | application/json | `json` |
+| CSV  | application/csv  | `csv`  |
 
 > Since DataWeave 2.3, MIME types can be specified with simple IDs such as `json` or `xml`. We will work with this syntax throughout this tutorial.
 
@@ -53,3 +55,4 @@ firstName,lastName,age
 John,Smith,45
 Jane,Doe,34
 ```
+---
