@@ -24,7 +24,7 @@ For example, this script returns `true` if the age is less than 10 or `false` if
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 var age = 2
 ---
 age < 10

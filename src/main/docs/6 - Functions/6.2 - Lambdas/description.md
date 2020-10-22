@@ -3,7 +3,7 @@
 DataWeave provides multiple ways to create functions. Just like we have named functions, we have functions without names, called lambdas. A lambda is a value in DataWeave, just like a String, an Object, and a Boolean. The syntax for a lambda is like so:
 
 ```
-([<arg1>], [<arg2>], …, [<argN>]) -> body
+(<arg1>, <arg2>, …, <argN>) -> body
 ```
 
 Here’s how we might try to use a lambda in a DataWeave script:
@@ -68,7 +68,7 @@ add(2, 3)
 ```
 ---
 
-But that’s not very useful either, we already have a nicer syntax for the same thing with the fun keyword. In the next section, we will see why lambdas are so important.
+But that’s not very useful either, we already have a nicer syntax for the same thing with the `fun` keyword. In the next section, we will see why lambdas are so important.
 
 ## Exercise
 

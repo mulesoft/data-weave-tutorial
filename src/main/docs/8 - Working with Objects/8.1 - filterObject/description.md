@@ -48,9 +48,9 @@ Given the following object, remove all key-value pairs with "secret" related key
 #### Input
 ```json
 {
-    "name": "Emiliano",
+    "name": "Jerry",
     "middle_name": false,
-    "last_name": "Lesende",
+    "last_name": "Schumann",
     "secret_key": "903mg20mgg4",
     "secret_password": "d0n0tH4ckm3PLiZ",
     "question_secret": "Do you wish to get hacked?",
