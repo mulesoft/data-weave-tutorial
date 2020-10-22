@@ -50,4 +50,3 @@ Use pattern matching to return `"Light off"` when the status for the input below
   "name": "Cabin outdoor light"
 }
 ```
-----

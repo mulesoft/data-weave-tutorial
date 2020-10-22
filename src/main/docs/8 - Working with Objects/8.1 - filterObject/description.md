@@ -57,4 +57,3 @@ Given the following object, remove all key-value pairs with "secret" related key
     "personal_token": false
 }
 ```
-----

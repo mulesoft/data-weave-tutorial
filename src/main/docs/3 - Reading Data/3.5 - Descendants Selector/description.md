@@ -56,4 +56,3 @@ Use what you've just learn to obtain an Array containing all of the values assoc
   </locations>
 </customer>
 ```
-----

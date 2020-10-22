@@ -58,4 +58,3 @@ Filter this given array so it contains only numbers that are greater than 3 usin
 ```json
 [0, 5, -32, 4, 66, 776, 3, 10, 1]
 ```
----

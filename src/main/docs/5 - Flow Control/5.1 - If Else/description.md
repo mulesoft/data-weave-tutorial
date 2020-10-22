@@ -65,4 +65,3 @@ Include a new "sell" action for our example when the price exceeds `140`.
   "price": 150.00
 }
 ```
-----

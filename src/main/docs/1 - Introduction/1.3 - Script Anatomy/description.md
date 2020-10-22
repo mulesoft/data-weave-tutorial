@@ -1,4 +1,4 @@
-# Script Anatomy
+# 1.3 - Script Anatomy
 
 Let’s go over the anatomy of a DataWeave script using the code from the last example:
 

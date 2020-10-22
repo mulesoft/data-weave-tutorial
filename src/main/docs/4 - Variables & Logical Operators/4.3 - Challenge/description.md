@@ -20,4 +20,3 @@ And the third and final item should be `true` when the address is outside of Cal
   false
 ]
 ```
----

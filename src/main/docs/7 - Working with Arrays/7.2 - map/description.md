@@ -58,4 +58,3 @@ Let's change the output type completely in the above script and output this inst
   }
 ]
 ```
-----

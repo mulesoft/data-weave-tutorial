@@ -75,4 +75,3 @@ Let's complete the last challenge again, but this time using a variable to avoid
   ]
 }
 ```
-----

@@ -101,4 +101,3 @@ Use `reduce` to transform the input array into the object below. Keep in mind th
   "prod": "4"
 }
 ```
-----

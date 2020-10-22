@@ -10,14 +10,20 @@ output json
 ---
 {
   one: [1],
-  two: "2"
+  two: "2",
+  three: {
+      A: "AAA"
+  }
 }
 ```
 #### Output:
 ```json
 {
   "one": [1],
-  "two": "2"
+  "two": "2",
+  "three": {
+    "A": "AAA"
+  }
 }
 ```
 ---
@@ -38,4 +44,4 @@ DataWeave allows repeated keys on Objects as well. This may seem odd, but the su
 
 Use repeated keys to obtain the XML above as output.
 
-> Change the output to be `application/json`. Are the keys still repeated? Is this valid JSON?
+> Change the output to be `json`. Are the keys still repeated? Is this valid JSON?

@@ -39,11 +39,17 @@ You can also use the single-value selector with square brackets instead of a per
 %dw 2.0
 output json
 ---
-payload[payload.dynamicKey]
+{
+  fixed: payload.age,
+  dynamic: payload[payload.dynamicKey]
+}
 ```
 #### Output:
 ```json
-29
+{
+  "fixed": 29,
+  "dynamic": 29
+}
 ```
 ---
 
@@ -63,4 +69,3 @@ Given the input below, string together selections to get to `"prod"`.
   "host": "linux"
 }
 ```
----

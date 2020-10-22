@@ -52,4 +52,3 @@ Let's combine what we just learned with what we have also learned about arrays t
   {"First Name": "Albert", "Last Name": "Einstein"}
 ]
 ```
-----

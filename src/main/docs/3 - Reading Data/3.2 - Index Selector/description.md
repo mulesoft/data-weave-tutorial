@@ -28,7 +28,7 @@ There’s another important feature that should be noted. If you use positive nu
 
 ## Exercise
 
-Given the following input, get to `"qa"` using only negative indexes.
+Given the following input, get to `"qa"`.
 
 ---
 ### Input:
@@ -36,3 +36,5 @@ Given the following input, get to `"qa"` using only negative indexes.
 ["prod", ["qa", "dev"]]
 ```
 ---
+
+> Try to get `"qa"` but using only negative indexes.

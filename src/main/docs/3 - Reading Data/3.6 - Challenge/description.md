@@ -48,4 +48,3 @@ Use what you know about selectors to get the output specified below from this in
   ]
 }
 ```
-----

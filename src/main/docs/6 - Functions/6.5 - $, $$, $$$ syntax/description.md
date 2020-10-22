@@ -95,4 +95,3 @@ Using the dollar-sign syntax, filter the following Array so it only contains use
   }
 ]
 ```
----

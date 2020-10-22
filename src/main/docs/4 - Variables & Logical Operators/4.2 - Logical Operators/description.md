@@ -46,4 +46,3 @@ Use operators to return `true` if the `name` field of your input is `"Max"`.
     "name": "Max"
 }
 ```
-----

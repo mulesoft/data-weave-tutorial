@@ -55,4 +55,3 @@ Filter this given array to contain only numbers that are multiples of 5 using a 
 ```json
 [4, 5, 32, 30, 45, 776, 1040, 103, 105]
 ```
----

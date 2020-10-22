@@ -76,4 +76,3 @@ Group these calendar events based on the day of the week:
   }
 ]
 ```
----

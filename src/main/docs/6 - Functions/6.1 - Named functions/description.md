@@ -46,4 +46,3 @@ Create an `isOddNum` function that receives one parameter and returns true if is
   "value": 2021
 }
 ```
----

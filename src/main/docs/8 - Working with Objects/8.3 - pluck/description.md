@@ -114,4 +114,3 @@ The `pluck` function is commonly used in conjunction with `groupBy`. This is bec
   ]
 ]
 ```
----
