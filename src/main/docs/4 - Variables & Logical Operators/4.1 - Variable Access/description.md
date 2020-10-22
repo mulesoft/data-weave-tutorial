@@ -27,7 +27,7 @@ Variables are almost always declared in the header of the script, where you set 
 
 ## Exercise
 
-Let's complete the last challenge again, but this time using a variable to avoid repeated references.
+Let's complete the last challenge again, but this time using a variable to avoid repeated expressions (in this case `payload.secondLevel`).
 
 ---
 #### Input:

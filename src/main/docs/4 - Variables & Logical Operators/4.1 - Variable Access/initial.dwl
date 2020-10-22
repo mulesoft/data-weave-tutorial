@@ -4,7 +4,7 @@ output json
 {
     "descendant": payload..id,
     "multivalue": payload.*id,
-    "multivalueSecondLevel": [],
-    "multivalueThirdLevel": [],
+    "multivalueSecondLevel": "",
+    "multivalueThirdLevel": "",
     "allTheIds" : payload..*id
 }

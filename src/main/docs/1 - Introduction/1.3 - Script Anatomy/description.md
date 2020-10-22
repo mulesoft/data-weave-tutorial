@@ -23,7 +23,7 @@ The second and third lines contain the input and output directives. They each ha
 
 `output <mime_type> [<writer_properties>]`
 
-After the first three lines of the script there is a line only containing three dashes. This is to separate your declarations from your script output logic. You’ll see in later tutorials that you can do more than just specify input and output directives in the declarations section, you can also declare functions and variables that you can reuse in your script.
+After the first three lines of the script there is a line only containing three dashes. This is to separate your declarations from your script output logic, sometimes called the header and the body of the script respectively. You’ll see in later tutorials that you can do more than just specify input and output directives in the declarations section, you can also declare functions and variables that you can reuse in your script.
 
 Finally, the last line of the script is the output section. Whatever the output section evaluates to is what gets sent to the writer, and is ultimately serialized into the specified output format.
 
