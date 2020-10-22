@@ -49,7 +49,7 @@ The dollar-sign syntax gives us all the same functionality as when we reference 
 #### DW Script:
 ```dw
 %dw 2.0
-output application/json
+output json
 ---
 payload filter $.price > 5
 ```
