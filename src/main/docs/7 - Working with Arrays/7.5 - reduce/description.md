@@ -37,6 +37,7 @@ For the first iteration, `reduce` does something special. If a default value is 
 ----
 #### First iteration (no default value provided)
 Value = 2
+
 Accumulator = 1
 ```
 ((2, 1) -> 1 + 2)
@@ -48,6 +49,7 @@ Which returns 3 and becomes the new value of the accumulator. `reduce` then move
 ----
 #### Second iteration
 Value = 3
+
 Accumulator = 3
 ```
 ((3, 3) -> 3 + 3)

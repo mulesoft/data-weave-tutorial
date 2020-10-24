@@ -31,7 +31,7 @@ The `filter` function takes two arguments, an Array and a Lambda. In situations 
 
 The `filter` function uses the lambda on each item of the Array to determine whether it should be in the returned Array. In the example shared, when `filter` calls the lambda with 1, it returns `true`, so 1 makes it to the output Array. When `filter` calls the lambda with 2, it returns `false`, so 2 does not make it to the output Array. This goes on until the last item of the Array is reached, then the final Array is returned.
 
-While the code above is ok, it’s a little inconvenient. We had to give a name to the function in order to use it, even though we were never going to use it again. This is exactly where lambdas come in. They enable us to pass functions to other functions without the inconvenience of having to think up a name for them:
+While the code above is ok, it’s a little inconvenient. We had to give a name to the function (`isOddNum`) in order to use it, even though we were never going to use it again. This is exactly where lambdas come in. They enable us to pass functions to other functions without the inconvenience of having to think up a name for them:
 
 ---
 #### DW Script:

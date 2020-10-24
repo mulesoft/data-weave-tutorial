@@ -37,7 +37,7 @@ add(1,2)
 
 ## Exercise:
 
-Create an `isOddNum` function that receives one parameter and returns true if is an odd number or false if not. You can use the `mod` function in the body of the `isOddNum` function. It returns the modulo (the remainder after dividing the dividend by the divisor). Use the function to evaluate the value here:
+Create an `isOddNum` function that receives one parameter and returns true if is an odd number or false if not. You can use the `mod` function in the body of the `isOddNum` function. It returns the modulo (the remainder after dividing the dividend by the divisor). Use the function to evaluate the value field of the payload:
 
 ---
 #### Input:
