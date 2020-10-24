@@ -34,9 +34,9 @@ What happened? Well, we've hinted at this before.
 
 All Object keys in DataWeave are of type `Key`, regardless of how the Object keys are created. The ``==`` operator tests if two values are equal, and part of that means checking that two values are the same type. This is why `key == "age"` returned false for every key-value pair in the input Object, `Key == String` is always false. How do you deal with this? There are three ways, you can:
 
-1. cast the Key to a String with `key as String == "age"`,
-2. cast the String to a Key with `key == "age" as Key`, or,
-3. use the "similar to" operator, `~=` instead of the "equal to" operator `key ~= "age"`
+1. Cast the Key to a String with `key as String == "age"`.
+2. Cast the String to a Key with `key == "age" as Key`.
+3. Use the "similar to" operator (`~=`), instead of the "equal to" operator (`==`), as `key ~= "age"`
 
 The `~=` operator and `filterObject` function usually go together. If you’re using filterObject to filter an Object based on a key, make sure you keep the `~=` operator in mind!
 

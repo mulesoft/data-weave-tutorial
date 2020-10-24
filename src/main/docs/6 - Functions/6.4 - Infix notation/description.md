@@ -4,7 +4,7 @@ So far, we’ve been calling filter using prefix notation. With prefix notation 
 ```
 <arg1> <function_name> <arg2>
 ```
-This syntax is preferred for nearly every function that takes a lambda as its second argument. Here’s how the code above would look if we called filter using infix notation:
+This syntax is preferred for nearly every function that takes a lambda as its second argument. Here’s how the code from the previous section would look if we called filter using infix notation:
 
 ---
 #### DW Script:
@@ -42,7 +42,7 @@ numbers
 ```
 ---
 
-In this case, the Array is filtered on whether or not is odd, then filtered on whether or not the number is greater than 3.
+In this case, the Array is filtered on whether or not the item is odd, then the result of that filter is filtered on whether or not the number is greater than 3.
 
 > Notice the additional parentheses around the first lambda. The parenthesis around the lambdas help DataWeave determine where the lambda starts and ends.
 

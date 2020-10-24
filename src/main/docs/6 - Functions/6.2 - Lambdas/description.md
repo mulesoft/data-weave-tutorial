@@ -72,4 +72,13 @@ But that’s not very useful either, we already have a nicer syntax for the same
 
 ## Exercise
 
-Create and call a lambda function that does the same as the `isOddNum` function from the previous exercise. The lambda should receive one parameter and return true if that parameter is an odd number, false otherwise.
+Create and call a lambda function that does the same as the `isOddNum` function from the previous exercise. The lambda should receive one parameter and return true if that parameter is an odd number, false otherwise. Use the lambda function to evaluate the value field of the payload:
+
+---
+#### Input:
+```json
+{
+  "value": 2021
+}
+```
+

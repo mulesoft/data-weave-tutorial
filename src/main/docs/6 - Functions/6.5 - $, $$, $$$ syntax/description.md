@@ -67,7 +67,7 @@ payload filter $.price > 5
 
 ## Exercise
 
-Using the dollar-sign syntax, filter the following Array so it only contains users whose names start with `"C"`.
+Using the dollar-sign syntax, filter the following Array so it only contains users whose names start with `"C"`. You can use the `startsWith` function, that returns true or false depending on whether the input string starts with a matching prefix.
 
 ---
 #### Input:
