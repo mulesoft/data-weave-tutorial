@@ -50,4 +50,4 @@ src/main/docs
       ...
 ```
 
-
+Disclaimer: It is not an officially supported MuleSoft Product. It is not supported by MuleSoft Support, you won't be able to open MuleSoft Support cases for this Suite and there are no SLAs for responses nor bug/features progress.
