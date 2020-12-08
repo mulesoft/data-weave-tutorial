@@ -54,6 +54,35 @@ You can have as many of these if/else chains as necessary.
 
 Imagine you had a third option in addition to “buy” and “hold”, “sell”. You could chain if/else expressions together to account for this additional criteria:
 
+## Conditional If
+
+Additionally, the **if** operator allows to conditionally add/remove a key/pair element into an object. 
+
+#### Input:
+```json
+{
+    "welcome-text": "Hello world!"
+}
+```
+#### DW Script:
+```dw
+%dw 2.0
+output application/json
+---
+{
+    (message: payload.message ) if (payload.message?)
+}
+```
+#### Output:
+```
+{
+  
+}
+```
+
+> Dataweave scripts must always return a result/output. In the above example, the output contains an empty object. Be aware when using this syntax affecting the results of a function. In the case that the function returns nothing, Dataweave will fail.
+
+
 ## Exercise
 
 Include a new "sell" action for our example when the price exceeds `140`.
