@@ -15,7 +15,12 @@ fun createTutorialTests(docsDirectory:String) = do {
           createTestCases(
               chapter,
               (mappingDir: String, testCase: String) -> do {
-                toUrl(path(mappingDir, testCase , "transform.dwl"))
+                var url = toUrl(path(mappingDir, testCase , "transform.dwl"))
+                ---
+                {
+                    content: readUrl(url, "text") as String,
+                    url: url
+                }
               }
           )
   })
