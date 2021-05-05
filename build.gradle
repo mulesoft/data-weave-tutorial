@@ -18,6 +18,9 @@ buildscript {
     dependencies {
         classpath "org.mule.weave:weave-gradle-plugin:" + weavedocVersion
         classpath "com.monochromeroad.gradle-plugins:gradle-aws-s3-sync:0.10"
+        classpath group: 'org.mule.weave', name: 'runtime', version: weaveVersion
+        classpath group: 'org.mule.weave', name: 'core-modules', version: weaveVersion
+        classpath group: 'org.mule.weave', name: 'file-module', version: '1.0.0-SNAPSHOT'
     }
 }
 
@@ -57,6 +60,11 @@ ext {
 }
 
 import com.monochromeroad.gradle.plugin.aws.s3.S3Sync
+import org.mule.weave.v2.runtime.DataWeaveScriptingEngine
+import org.mule.weave.v2.runtime.ScriptingBindings
+import org.mule.weave.v2.model.ServiceManager$
+import org.mule.weave.v2.model.EmptyWeaveServicesProvider$
+import scala.Some
 
 task uploadDistro(type: S3Sync) {
     description = "Deploy tutorial"
@@ -68,6 +76,20 @@ task uploadDistro(type: S3Sync) {
     into "weave-tutorial"
 }
 
+task tutorialContentToJson(type: TutorialContentToJsonTask)
+
 
 docs.dependsOn(weavetest)
 build.dependsOn(docs)
+build.dependsOn(tutorialContentToJson)
+
+class TutorialContentToJsonTask extends DefaultTask {
+    @TaskAction
+    def run() {
+        def engine = new DataWeaveScriptingEngine()
+        def compile = engine.compile(new File("$project.projectDir/transform.dwl"))
+        def serviceManager = ServiceManager$.MODULE$.apply(EmptyWeaveServicesProvider$.MODULE$)
+        def outputFile = new File("$project.buildDir/distributions/tutorial_content.json")
+        compile.write(new ScriptingBindings(), serviceManager, Some.apply(outputFile))
+    }
+}
