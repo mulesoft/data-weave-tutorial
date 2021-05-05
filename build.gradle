@@ -20,7 +20,7 @@ buildscript {
         classpath "com.monochromeroad.gradle-plugins:gradle-aws-s3-sync:0.10"
         classpath group: 'org.mule.weave', name: 'runtime', version: weaveVersion
         classpath group: 'org.mule.weave', name: 'core-modules', version: weaveVersion
-        classpath group: 'org.mule.weave', name: 'file-module', version: '1.0.0-SNAPSHOT'
+        classpath group: 'org.mule.weave', name: 'file-module', version: fileModuleVersion
     }
 }
 
