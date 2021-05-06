@@ -4,6 +4,7 @@
 import * from dw::io::file::FileSystem
 import * from dw::core::Strings
 import * from dw::core::Arrays
+import * from dw::core::URL
 output application/json
 
 var acceptedFileTypes = [".dwl", ".json", ".xml", ".csv", ".md", "hints", "inputs"]
@@ -21,11 +22,18 @@ fun getTutorials(path) = do {
 	ls(path) 
 		filter isTitle($)
 		orderBy $
-		map {
-			path: $ substringAfter root,
-			name: ($ splitBy "/")[-1],
-			(getTutorialContent($)),
-			children: getTutorials($)
+		map do {
+		    var path = $ substringAfter root
+		    ---
+    		{
+                path: path,
+                name: ($ splitBy "/")[-1],
+                url: "https://github.com/mulesoft-labs/data-weave-tutorial/blob/master/src/main/docs"
+                    ++ encodeURIComponent(path) ++ "/description.md",
+                (getTutorialContent($)),
+                children: getTutorials($)
+
+		    }
 		}
 }
 
