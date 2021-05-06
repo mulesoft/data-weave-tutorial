@@ -28,7 +28,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build Tutorial
-        run: ./gradlew build -x test
+        run: ./gradlew build
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_KEY: ${{secrets.AWS_SECRET_KEY}}
