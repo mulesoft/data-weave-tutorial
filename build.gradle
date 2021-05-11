@@ -20,6 +20,7 @@ buildscript {
         classpath "com.monochromeroad.gradle-plugins:gradle-aws-s3-sync:0.10"
         classpath group: 'org.mule.weave', name: 'runtime', version: weaveVersion
         classpath group: 'org.mule.weave', name: 'core-modules', version: weaveVersion
+        classpath group: 'org.mule.weave', name: 'java-module', version: weaveVersion
         classpath group: 'org.mule.weave', name: 'file-module', version: fileModuleVersion
     }
 }
@@ -60,10 +61,15 @@ ext {
 }
 
 import com.monochromeroad.gradle.plugin.aws.s3.S3Sync
+import org.mule.weave.v2.completion.DataFormatDescriptor$
+import org.mule.weave.v2.completion.DataFormatProperty
+import org.mule.weave.v2.editor.*
+import org.mule.weave.v2.model.EmptyWeaveServicesProvider$
+import org.mule.weave.v2.model.ServiceManager$
 import org.mule.weave.v2.runtime.DataWeaveScriptingEngine
 import org.mule.weave.v2.runtime.ScriptingBindings
-import org.mule.weave.v2.model.ServiceManager$
-import org.mule.weave.v2.model.EmptyWeaveServicesProvider$
+import org.mule.weave.v2.ts.WeaveType
+import scala.None$
 import scala.Some
 
 task uploadDistro(type: S3Sync) {
@@ -83,13 +89,71 @@ docs.dependsOn(weavetest)
 build.dependsOn(docs)
 build.dependsOn(tutorialContentToJson)
 
+class WeaveTypeFactory {
+    static def dataFormats() {
+        def dfd = DataFormatDescriptor$.MODULE$
+        DataFormatProperty[] dfp = []
+        def dataFormats = [
+                dfd.apply("application/dw", "weave", dfp, dfp)
+        ]
+        dataFormats
+    }
+
+    static def parse(String content) {
+        VirtualFileSystem fs = EmptyVirtualFileSystem$.MODULE$
+        fs.updateContent("/dummy.dwl", content)
+        def file = fs.file("/dummy.dwl")
+        def service = new WeaveToolingService(fs, {dataFormats()})
+        ImplicitInput inputs = ImplicitInput$.MODULE$.apply()
+        scala.Option<WeaveType> none = None$.MODULE$
+        def document = service.openInMemory(file, inputs, none)
+        document.typeOfMapping().get()
+    }
+}
+
 class TutorialContentToJsonTask extends DefaultTask {
     @TaskAction
     def run() {
         def engine = new DataWeaveScriptingEngine()
-        def compile = engine.compile(new File("$project.projectDir/transform.dwl"))
+        def compile = engine.compile(new File("$project.projectDir/scripts/transform.dwl"))
         def serviceManager = ServiceManager$.MODULE$.apply(EmptyWeaveServicesProvider$.MODULE$)
         def outputFile = new File("$project.buildDir/distributions/tutorial_content.json")
         compile.write(new ScriptingBindings(), serviceManager, Some.apply(outputFile))
+
+        def compile2 = engine.compile(new File("$project.projectDir/scripts/weaveTypes.dwl"))
+        def bindings = new ScriptingBindings().addBinding("payload", outputFile, "application/json")
+        Map<String, Map<String, String>> types = compile2.write(bindings, serviceManager).content
+        String contentStr = typesToJson(types)
+        def outputFile3 = new File("$project.buildDir/distributions/weaveTypes.json")
+        outputFile3.write contentStr
+    }
+
+    private static String typesToJson(Map<String, Map<String, String>> types) {
+        def builder = new StringBuilder()
+        def initialStr = "{\n"
+        builder.append(initialStr)
+        types.entrySet().forEach { entry ->
+            def path = entry.getKey()
+            def inputs = entry.getValue()
+            if (builder.length() > initialStr.length()) {
+                builder.append(",\n")
+            }
+            builder.append('  "').append(path).append('": {\n')
+            def inputsBuilder = new StringBuilder()
+            inputs.entrySet().forEach { it ->
+                if (inputsBuilder.length() > 0) {
+                    inputsBuilder.append(",\n")
+                }
+                def inputName = it.getKey()
+                def content = it.getValue()
+                def weaveType = WeaveTypeFactory.parse(content)
+                inputsBuilder.append('    "').append(inputName).append('": "').append(weaveType.toString().replaceAll('"', "'").replaceAll("\n", "")).append('"')
+            }
+            builder.append(inputsBuilder.toString())
+            builder.append("\n  }")
+        }
+        builder.append("\n}")
+        def contentStr = builder.toString()
+        contentStr
     }
 }
