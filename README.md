@@ -1,6 +1,6 @@
 # DataWeave Tutorial
 
-This repository contains the content shown in the [DataWeave Tutorial](http://dwlang.fun)
+This repository contains the content shown in the [DataWeave Tutorial](https://developer.mulesoft.com/learn/dataweave)
 
 The docs are located [here](https://github.com/mulesoft-labs/data-weave-tutorial/tree/master/src/main/docs)
 
