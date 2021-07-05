@@ -78,7 +78,7 @@ Create and call a lambda function that does the same as the `isOddNum` function 
 #### Input:
 ```json
 {
-  "value": 2021
+  "value": 2020
 }
 ```
 
