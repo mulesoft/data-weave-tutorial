@@ -1,6 +1,6 @@
 # 7.4 - The reduce Function
 
-The `reduce` function is about as close as we get to a general-purpose looping tool in DataWeave. It can be used to transform an `Array` to any other type. It can be used to perform the task of `map`, `filter`, `distinctBy`, `groupBy`, and other functions that take in Arrays. Here’s its function signature:
+The `reduce` function is about as close as we get can to a general-purpose looping tool in DataWeave. It can be used to transform an `Array` to any other type. It can be used to perform the task of `map`, `filter`, `distinctBy`, `groupBy`, and other functions that take in Arrays. Here’s its function signature:
 ```
 reduce(Array<T>, ((T, R) -> R)): R
 ```
