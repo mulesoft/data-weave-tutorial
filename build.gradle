@@ -43,10 +43,12 @@ repositories {
     }
 }
 
+/*
 dependencies {
     testCompile group: 'org.mule.weave', name: 'wtf', version: wtfVersion
     testCompile group: 'org.mule.weave', name: 'yaml-module', version: weaveVersion
 }
+*/
 
 task docs(type: Zip) {
     from 'src/main/docs/'
