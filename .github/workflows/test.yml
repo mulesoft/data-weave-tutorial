@@ -4,7 +4,14 @@ name: Run Tutorial Build
 
 # Controls when the action will run. Triggers the workflow pull request
 # events on every branch
-on: pull_request
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - master
+  pull_request:
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,3 +34,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: Build Tutorial
       run: ./gradlew build
+    - uses: actions/upload-artifact@v2
+      with:
+        name: weave-tutorial
+        path: build/distributions/*.zip
+        retention-days: 5
