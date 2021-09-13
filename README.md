@@ -1,10 +1,10 @@
 # DataWeave Tutorial
 
-This repository contains the content shown in the [DataWeave Tutorial](https://developer.mulesoft.com/learn/dataweave)
+This repository contains the content shown in the [DataWeave Tutorial](https://developer.mulesoft.com/learn/dataweave/tutorial)
 
 The docs are located [here](https://github.com/mulesoft-labs/data-weave-tutorial/tree/master/src/main/docs)
 
-### The docs folder structure
+### The docs Folder Structure
 
 We use **a folder for each section** of the tutorial and a couple of files to describe the content of each section.
 
@@ -20,9 +20,11 @@ A **section** contains these files:
 | initial.dwl                 | Initial script shown to the user |
 | transform.dwl               | Script that solves the given exercise. We use this in our CI to validate the given input and outputs match |
 | `out.json` / `out.xml` / etc| Expected result of the exercise  |
-| answer.md                   | this will be shown to the user upon clicking a button that says "Show answer"  |
+| answer.md                   | this will be shown to the user upon clicking a button that says "Show answer" (not yet implemented)  |
 
-So for example:
+There may also be an `inputs` folder, listing the files for input values the script should include. The name of the file will determine the name of the input value: `payload.json` will include a JSON `payload` input.
+
+So, for example:
 ```
 src/main/docs
 +
