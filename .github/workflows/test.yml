@@ -38,4 +38,4 @@ jobs:
       with:
         name: weave-tutorial
         path: build/distributions/*.zip
-        retention-days: 5
+        retention-days: 90
