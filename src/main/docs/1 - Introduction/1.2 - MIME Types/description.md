@@ -33,7 +33,7 @@ Here’s an example which takes in an array of JSON objects and transforms it in
 ```dw
 %dw 2.0
 input payload json
-output csv header=false
+output csv header=true
 ---
 payload
 ```
