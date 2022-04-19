@@ -37,7 +37,7 @@ var action = if (payload.price < 100) "buy" else "hold"
 ```
 ----
 
-If you’re familiar with popular languages like Java, or C#, you’ll notice the way DataWeave implements if/else is much closer to a ternary expression that the if/else statements you see in those languages. The difference is very simple, however. DW uses if/else expressions that returns values, Java and C# us if/else statements that do not return values.
+If you’re familiar with popular languages like Java, or C#, you’ll notice the way DataWeave implements if/else is much closer to a ternary expression than the if/else statements you see in those languages. The difference is very simple, however. DW uses if/else expressions that return values; Java and C# use if/else statements that do not return values.
 
 If/else expressions can be chained together, meaning you can do multiple checks before you return any data. Here’s the format for how that works:
 
