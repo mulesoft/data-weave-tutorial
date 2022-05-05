@@ -12,7 +12,7 @@ buildscript {
         }
         maven {
             name "mule-snapshots"
-            url "http://repository.mulesoft.org/nexus/content/repositories/snapshots/"
+            url "https://repository.mulesoft.org/nexus/content/repositories/snapshots/"
         }
     }
     dependencies {
@@ -44,7 +44,11 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'org.mule.weave', name: 'wtf', version: wtfVersion
+    testCompile group: 'org.mule.weave', name: 'runtime', version: weaveVersion
+    testCompile group: 'org.mule.weave', name: 'core-modules', version: weaveVersion
+    testCompile group: 'org.mule.weave', name: 'java-module', version: weaveVersion
+
+    testCompile group: 'org.mule.weave', name: 'data-weave-testing-framework', version: wtfVersion
     testCompile group: 'org.mule.weave', name: 'yaml-module', version: weaveVersion
 }
 
