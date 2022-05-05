@@ -7,7 +7,7 @@ In this tutorial we will go over how to create:
 * Arrays
 * Objects
 
-These values have their respective [types](https://docs.mulesoft.com/mule-runtime/latest/dataweave-type-system):
+These values have their respective [types](https://docs.mulesoft.com/dataweave/latest/dataweave-type-system):
 * `Number`
 * `String`
 * `Boolean`

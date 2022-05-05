@@ -44,7 +44,11 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'org.mule.weave', name: 'wtf', version: wtfVersion
+    testCompile group: 'org.mule.weave', name: 'runtime', version: weaveVersion
+    testCompile group: 'org.mule.weave', name: 'core-modules', version: weaveVersion
+    testCompile group: 'org.mule.weave', name: 'java-module', version: weaveVersion
+
+    testCompile group: 'org.mule.weave', name: 'data-weave-testing-framework', version: wtfVersion
     testCompile group: 'org.mule.weave', name: 'yaml-module', version: weaveVersion
 }
 
@@ -72,14 +76,9 @@ import org.mule.weave.v2.ts.WeaveType
 import scala.None$
 import scala.Some
 
-task uploadDistro(type: S3Sync) {
-    description = "Deploy tutorial"
-    accessKey aws.accessKey
-    secretKey aws.secretKey
-    noDelete true
-    acl com.monochromeroad.gradle.plugin.aws.s3.ACL.PublicRead
-    from "build/distributions/"
-    into "weave-tutorial"
+task packageDistribution(type: Zip) {
+    classifier = "content"
+    from "$buildDir/distributions/content"
 }
 
 task tutorialContentToJson(type: TutorialContentToJsonTask)
@@ -88,6 +87,8 @@ task tutorialContentToJson(type: TutorialContentToJsonTask)
 docs.dependsOn(weavetest)
 build.dependsOn(docs)
 build.dependsOn(tutorialContentToJson)
+packageDistribution.dependsOn(tutorialContentToJson)
+build.dependsOn(packageDistribution)
 
 class WeaveTypeFactory {
     static def dataFormats() {
@@ -117,14 +118,16 @@ class TutorialContentToJsonTask extends DefaultTask {
         def engine = new DataWeaveScriptingEngine()
         def compile = engine.compile(new File("$project.projectDir/scripts/transform.dwl"))
         def serviceManager = ServiceManager$.MODULE$.apply(EmptyWeaveServicesProvider$.MODULE$)
-        def outputFile = new File("$project.buildDir/distributions/tutorial_content.json")
+        def outputFolder = new File("$project.buildDir/distributions/content/")
+        outputFolder.mkdirs()
+        def outputFile = new File(outputFolder,"tutorial_content.json")
         compile.write(new ScriptingBindings(), serviceManager, Some.apply(outputFile))
 
         def compile2 = engine.compile(new File("$project.projectDir/scripts/weaveTypes.dwl"))
         def bindings = new ScriptingBindings().addBinding("payload", outputFile, "application/json")
         Map<String, Map<String, String>> types = compile2.write(bindings, serviceManager).content
         String contentStr = typesToJson(types)
-        def outputFile3 = new File("$project.buildDir/distributions/weaveTypes.json")
+        def outputFile3 = new File(outputFolder,"weaveTypes.json")
         outputFile3.write contentStr
     }
 
