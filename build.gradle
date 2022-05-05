@@ -35,11 +35,11 @@ repositories {
     mavenCentral()
     maven {
         name "mule-releases"
-        url "http://repository.mulesoft.org/nexus/content/repositories/releases/"
+        url "https://repository.mulesoft.org/nexus/content/repositories/releases/"
     }
     maven {
         name "mule-snapshots"
-        url "http://repository.mulesoft.org/nexus/content/repositories/snapshots/"
+        url "https://repository.mulesoft.org/nexus/content/repositories/snapshots/"
     }
 }
 
