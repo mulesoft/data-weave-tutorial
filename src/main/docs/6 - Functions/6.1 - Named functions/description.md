@@ -33,7 +33,7 @@ add(1,2)
 ```
 ---
 
-> Notice that there is no return keyword. A return keyword isn’t needed because most everything in DataWeave is an expression, and all expressions return data.
+> Notice that there is no return keyword. A return keyword isn’t needed because almost everything in DataWeave is an expression, and all expressions return data.
 
 It is often useful to create a _scope_ for functions, where we can declare variables and even more functions. Scopes are created using the `do` statement and work by making everything defined on its header available for use on its body but not beyond that limit.
 
