@@ -48,7 +48,7 @@ output json
 
 > How would the script look if you didn’t surround the lambda in parentheses? Do you see a problem?
 
-If this syntax seems awkward, it’s because we’re using lambdas in a way they’re not meant to be used. If you needed to accomplish the above script, you be better off having the body as 2 + 3. So what are lambdas good for?
+If this syntax seems awkward, it’s because we’re using lambdas in a way they’re not meant to be used. If you needed to accomplish the above script, you would be better off having the body as 2 + 3. So what are lambdas good for?
 
 Because lambdas are values just like Strings, we can assign them to variables. This effectively gives a name to an unnamed function and allows us to use a lambda just like a normal function:
 
