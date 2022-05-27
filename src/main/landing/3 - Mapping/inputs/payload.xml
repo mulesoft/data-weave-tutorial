@@ -1,0 +1,13 @@
+<order>
+    <product>
+        <name>MuleSoft Connect</name>
+    </product>
+    <product>
+        <name>Dreamforce</name>
+    </product>
+    <buyer>
+        <name>Michael</name>
+        <city>San Diego</city>
+        <address>Koala Boulevard 314</address>
+    </buyer>
+</order>
