@@ -1,0 +1,9 @@
+language: DataWeave
+content:
+    description: Transform data!
+    resources:
+        - Interactive Tutorial
+        - Playground
+        - VSCode extension
+        - CLI
+        - Community

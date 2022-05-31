@@ -1,0 +1,14 @@
+[
+    {
+        "dayOfWeek": "Friday",
+        "event": "Develop mule application"
+    },
+    {
+        "dayOfWeek": "Sunday",
+        "event": "Breakfast @ Cafe"
+    },
+    {
+        "dayOfWeek": "Friday",
+        "event": "Football game"
+    }
+]
