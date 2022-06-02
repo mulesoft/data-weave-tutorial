@@ -16,7 +16,7 @@ output json
 ```
 ---
 
-## Excercise
+## Exercise
 Create a 4 decimal Pi representation.
 
 > Note what happens when you check its type using `typeOf`
