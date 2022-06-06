@@ -7,7 +7,7 @@ import * from dw::core::Arrays
 import * from dw::core::URL
 output application/json
 
-var acceptedFileTypes = [".dwl", ".json", ".xml", ".csv", ".md", "hints", "inputs"]
+var acceptedFileTypes = [".dwl", ".json", ".xml", ".csv", ".md", ".yaml", "hints", "inputs"]
 var root = wd() ++ "/src/main/docs"
 
 fun isAccepted(str) = acceptedFileTypes some (str endsWith $)
