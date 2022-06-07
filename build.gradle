@@ -21,6 +21,7 @@ buildscript {
         classpath group: 'org.mule.weave', name: 'runtime', version: weaveVersion
         classpath group: 'org.mule.weave', name: 'core-modules', version: weaveVersion
         classpath group: 'org.mule.weave', name: 'java-module', version: weaveVersion
+        classpath group: 'org.mule.weave', name: 'yaml-module', version: weaveVersion
         classpath group: 'org.mule.weave', name: 'file-module', version: fileModuleVersion
     }
 }
@@ -115,20 +116,27 @@ class WeaveTypeFactory {
 class TutorialContentToJsonTask extends DefaultTask {
     @TaskAction
     def run() {
-        def engine = new DataWeaveScriptingEngine()
-        def compile = engine.compile(new File("$project.projectDir/scripts/transform.dwl"))
-        def serviceManager = ServiceManager$.MODULE$.apply(EmptyWeaveServicesProvider$.MODULE$)
-        def outputFolder = new File("$project.buildDir/distributions/content/")
-        outputFolder.mkdirs()
-        def outputFile = new File(outputFolder,"tutorial_content.json")
-        compile.write(new ScriptingBindings(), serviceManager, Some.apply(outputFile))
+        def oldUserDir = System.getProperty("user.dir")
+        try {
+            //Change to user dir that is expected on the scripts
+            System.setProperty("user.dir", "$project.projectDir")
+            def engine = new DataWeaveScriptingEngine()
+            def compile = engine.compile(new File("$project.projectDir/scripts/transform.dwl"))
+            def serviceManager = ServiceManager$.MODULE$.apply(org.mule.weave.v2.model.service.StdOutputLoggingService$.MODULE$)
+            def outputFolder = new File("$project.buildDir/distributions/content/")
+            outputFolder.mkdirs()
+            def outputFile = new File(outputFolder, "tutorial_content.json")
+            compile.write(new ScriptingBindings(), serviceManager, Some.apply(outputFile))
 
-        def compile2 = engine.compile(new File("$project.projectDir/scripts/weaveTypes.dwl"))
-        def bindings = new ScriptingBindings().addBinding("payload", outputFile, "application/json")
-        Map<String, Map<String, String>> types = compile2.write(bindings, serviceManager).content
-        String contentStr = typesToJson(types)
-        def outputFile3 = new File(outputFolder,"weaveTypes.json")
-        outputFile3.write contentStr
+            def compile2 = engine.compile(new File("$project.projectDir/scripts/weaveTypes.dwl"))
+            def bindings = new ScriptingBindings().addBinding("payload", outputFile, "application/json")
+            Map<String, Map<String, String>> types = compile2.write(bindings, serviceManager).content
+            String contentStr = typesToJson(types)
+            def outputFile3 = new File(outputFolder, "weaveTypes.json")
+            outputFile3.write contentStr
+        } finally {
+            System.setProperty("user.dir", oldUserDir)
+        }
     }
 
     private static String typesToJson(Map<String, Map<String, String>> types) {
