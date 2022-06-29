@@ -5,9 +5,15 @@ import * from dw::io::file::FileSystem
 import * from dw::core::Strings
 import * from dw::core::Arrays
 import * from dw::core::URL
+
+import dataFormatsDescriptor from dw::Runtime
+
 output application/json
 
-var acceptedFileTypes = [".dwl", ".json", ".xml", ".csv", ".md", "hints", "inputs"]
+fun runtimeMediaTypeExtensions() = dataFormatsDescriptor() flatMap ((dfd) -> dfd.extensions)
+
+var tutorialSpecificFiles = [ ".md", "hints", "inputs" ]
+var acceptedFileTypes =  runtimeMediaTypeExtensions() ++ tutorialSpecificFiles
 var root = wd() ++ "/src/main/docs"
 
 fun isAccepted(str) = acceptedFileTypes some (str endsWith $)
@@ -19,7 +25,7 @@ fun getFileName(str) = str substringAfterLast("/")
 fun readFile(path) = trim(contentOf(path) as String {encoding: "UTF-8"})
 
 fun getTutorials(path) = do {
-	ls(path) 
+	ls(path)
 		filter isTitle($)
 		orderBy $
 		map do {
@@ -50,8 +56,8 @@ fun getTutorialContent(path) = do {
 		}
 	) mapObject (value, key) -> {
 		(key match {
-			case "initial.dwl"               -> "initial"
-			case "transform.dwl"             -> "transform"
+			case "initial.dwl"              -> "initial"
+			case "transform.dwl"            -> "transform"
 			case "answer.md"                -> "answer"
 			case "description.md"           -> "description"
 			case x if (x startsWith "out.") -> "output"

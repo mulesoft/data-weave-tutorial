@@ -8,7 +8,7 @@ var children = flatten(payload..children)
         filter ((x) -> x.inputs != null)
         map ((x) -> {
             (x.path):  x.inputs mapObject do {
-                var in = log($$ splitBy ".")
+                var in = $$ splitBy "."
                 var inputName = in[0]
                 var dataformat = in[1]
                 ---
