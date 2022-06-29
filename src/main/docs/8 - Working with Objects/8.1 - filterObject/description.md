@@ -1,6 +1,6 @@
 # 8.1 - The filterObject function
 
-The `filterObject` function is similar to the `filter` function, but instead of moving items from Arrays, the `filterObject` function removes key-value pairs from Objects. Here is its type signature:
+The `filterObject` function is similar to the `filter` function, but instead of removing items from Arrays, the `filterObject` function removes key-value pairs from Objects. Here is its type signature:
 ```
 filterObject(Object<K,V>, ((V,K,Number) -> Boolean)): Object<K,V>
 ```
