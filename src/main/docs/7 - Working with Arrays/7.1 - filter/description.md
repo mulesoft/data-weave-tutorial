@@ -1,6 +1,6 @@
 # 7.1 - The filter Function (and Function Type Signatures)
 
-Since `filter` was covered in the last tutorial, we’ll use this opportunity to learn another concept alongside this function: type signatures. When dealing with functions, it’s important to know what kind of data is valid input, and what to expect as output. For example, we know the valid input to filter is an Array and a lambda, and it returns an Array. However, this isn’t quite descriptive enough because there is another function to be accounted for, the lambda. The lambda takes in two arguments, a single item of type Any, and a index of type Number. It returns a Boolean. We can use a syntax that is very close to DataWeave to define this:
+Since `filter` was covered in the last tutorial, we’ll use this opportunity to learn another concept alongside this function: type signatures. When dealing with functions, it’s important to know what kind of data is valid input, and what to expect as output. For example, we know the valid input to filter is an Array and a lambda, and it returns an Array. However, this isn’t quite descriptive enough because there is another function to be accounted for, the lambda. The lambda takes in two arguments, a single item of type Any, and a index of type Number. It returns a Boolean. We can use a syntax that is very close to DataWeave to define this:-
 
 ```
 filter(Array<Any>, ((Any, Number) -> Boolean)) : Array<Any>
