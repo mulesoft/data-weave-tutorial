@@ -69,8 +69,8 @@ import com.monochromeroad.gradle.plugin.aws.s3.S3Sync
 import org.mule.weave.v2.completion.DataFormatDescriptor$
 import org.mule.weave.v2.completion.DataFormatProperty
 import org.mule.weave.v2.editor.*
-import org.mule.weave.v2.model.EmptyWeaveServicesProvider$
-import org.mule.weave.v2.model.ServiceManager$
+import org.mule.weave.v2.core.model.EmptyWeaveServicesProvider$
+import org.mule.weave.v2.core.model.ServiceManager$
 import org.mule.weave.v2.runtime.DataWeaveScriptingEngine
 import org.mule.weave.v2.runtime.ScriptingBindings
 import org.mule.weave.v2.ts.WeaveType
@@ -122,7 +122,7 @@ class TutorialContentToJsonTask extends DefaultTask {
             System.setProperty("user.dir", "$project.projectDir")
             def engine = new DataWeaveScriptingEngine()
             def compile = engine.compile(new File("$project.projectDir/scripts/transform.dwl"))
-            def serviceManager = ServiceManager$.MODULE$.apply(org.mule.weave.v2.model.service.StdOutputLoggingService$.MODULE$)
+            def serviceManager = ServiceManager$.MODULE$.apply(org.mule.weave.v2.core.model.service.StdOutputLoggingService$.MODULE$)
             def outputFolder = new File("$project.buildDir/distributions/content/")
             outputFolder.mkdirs()
             def outputFile = new File(outputFolder, "tutorial_content.json")
