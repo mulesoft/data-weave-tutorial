@@ -1,6 +1,6 @@
 # 7.6 - Challenge
 
-Use the functions you just learned and the concatenation function `++` to work with the payload below so that the missing `dayOfWeek` field is included in each event and only events organized by Ross are shown.
+Use the functions you just learned and the concatenation function `++` to work with the payload below so that the missing `day` field is included in each event and only events organized by Ross are shown.
 
 As an example, you can see how a `datetime` value is converted to a `LocalDateTime` and date decomposition used to obtain a day of the week from 1 to 7 and then mapped to the desired name.
 
