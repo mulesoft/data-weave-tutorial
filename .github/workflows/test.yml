@@ -19,7 +19,7 @@ jobs:
   OSX_LINUX:
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [mulesoft-ubuntu]
     runs-on: ${{ matrix.os }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
